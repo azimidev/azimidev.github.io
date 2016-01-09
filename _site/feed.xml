@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll for Web Designers</title>
+    <description>Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.</description>
+    <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/</link>
+    <atom:link href="http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 01 Oct 2015 12:02:44 -0400</pubDate>
+    <lastBuildDate>Thu, 01 Oct 2015 12:02:44 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Deployment Options</title>
+        <description>&lt;p&gt;Once you’ve finished building your Jekyll site you’ll need to decide where and how you want to deploy it. Since Jekyll builds static content you can serve it almost anywhere. There are no server-side dependencies, CMS installations, database administrators, or server stacks to worry about. If the server can handle HTML, CSS, and JavaScript, it can serve your site. With that in mind let’s take a look at some of the most common options for deploying Jekyll sites.&lt;/p&gt;
+
+&lt;h3&gt;FTP/SFTP&lt;/h3&gt;
+
+&lt;p&gt;Almost all hosting companies allow you to upload content via FTP or SFTP. Simply use a FTP client (such as &lt;a href=&quot;https://filezilla-project.org/&quot; title=&quot;Filezilla&quot;&gt;Filezilla&lt;/a&gt;) to upload the contents of your &lt;strong&gt;_site&lt;/strong&gt; directory to the &lt;strong&gt;www&lt;/strong&gt; or &lt;strong&gt;public_html&lt;/strong&gt; directory of your hosting server. One downside to this method is the manual nature of updating your site. When files change you’ll need to manually overwrite your remote files. For larger sites this can be time-consuming and prone to errors.&lt;/p&gt;
+
+&lt;p&gt;One option for enhancing FTP deployment is to use a Git-integrated FTP client like &lt;a href=&quot;https://github.com/git-ftp/git-ftp&quot; title=&quot;git-ftp&quot;&gt;git-ftp&lt;/a&gt;. This allows you to bring version control into your deployment workflow and only upload the files that have changed.&lt;/p&gt;
+
+&lt;h3&gt;Git&lt;/h3&gt;
+
+&lt;p&gt;Speaking of Git, if you’re using it to source-control your site, you can set it up to push to your web server when it’s time for deployment. To do this you’ll need to set up a post-update hook on your remote server. You’ll also, of course, need Git installed on your server and SSH access. This method of deployment is a little more technical than others, so you’ll need to be comfortable with Git, the command line interface, and writing basic scripts. &lt;a href=&quot;http://nicolasgallagher.com/simple-git-deployment-strategy-for-static-sites/&quot; title=&quot;Git for static sites&quot;&gt;Nicolas Gallagher wrote one of the best posts&lt;/a&gt; on the subject that I’ve seen, though a quick Google search will return several articles detailing versions of this workflow.&lt;/p&gt;
+
+&lt;h3&gt;Deployment Web Services&lt;/h3&gt;
+
+&lt;p&gt;Several online services offer deployment workflows for apps and sites. Most offer tiers of services that range from free to monthly fees based on the size and number of sites you’ll be updating. While many of their services aren’t really necessary for smaller static sites, the convenience of having your deployment automated with a single click is pretty nice, and the extra features can come in handy as your site grows. Check out &lt;a href=&quot;http://beanstalkapp.com/&quot; title=&quot;Beanstalk&quot;&gt;Beanstalk&lt;/a&gt;, &lt;a href=&quot;http://deploybot.com/&quot; title=&quot;Deploybot&quot;&gt;DeployBot&lt;/a&gt;, &lt;a href=&quot;https://www.netlify.com/&quot; title=&quot;Netlify&quot;&gt;Netlify&lt;/a&gt; and &lt;a href=&quot;https://travis-ci.org/&quot; title=&quot;Travis CI&quot;&gt;Travis CI&lt;/a&gt; for a good idea of how these services work and if they’re right for you.&lt;/p&gt;
+
+&lt;h3&gt;Github&lt;/h3&gt;
+
+&lt;p&gt;Github uses Jekyll to power it’s Github Pages feature, so it’s only natural that deploying Jekyll sites through Github is quick and easy. You can even host your personal or project site for free on Github. You have two options for serving your site: user/organization or as a project page. Each Github user gets one free user/organization Github Pages site, and unlimited project pages. Organization pages are served as the “home” site for the user, so it’s served at &lt;code&gt;username.github.io.&lt;/code&gt; Project pages are served as subdomains, so they would be served at &lt;code&gt;username.github.io/project-name.&lt;/code&gt; The only real difference between the two methods is how you format relative links, as project pages have the project name directory as part of their base URL. You can even redirect a custom domain to your Github Pages site, which makes it a very attractive choice for hosting personal blogs and smaller sites.&lt;/p&gt;
+
+&lt;p&gt;The workflow for deploying to Github Pages is simple. Login to your Github account, create a new repo, and then point your local repo to use the new Github repo as its remote. Create a new branch called &lt;code&gt;gh-pages&lt;/code&gt; and push everything except the &lt;strong&gt;_site&lt;/strong&gt; directory to your new Github repo. Github will detect the Jekyll site, build it, and serve the site at the appropriate URL. From there, updating the site is as simple as writing a new Markdown file and making a push.&lt;/p&gt;
+
+&lt;h3&gt;More information&lt;/h3&gt;
+
+&lt;p&gt;For more information on deploying Jekyll sites (and more options), check out the section on &lt;a href=&quot;http://jekyllrb.com/docs/deployment-methods/&quot; title=&quot;deployment methods&quot;&gt;deployment methods&lt;/a&gt; in Jekyll’s documentation.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 01 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/deployment-options</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/deployment-options</guid>
+        
+        <category>jekyll</category>
+        
+        <category>deployment</category>
+        
+        <category>github pages</category>
+        
+        <category>git</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jekyll and CSS</title>
+        <description>&lt;p&gt;One of my favorite things about Jekyll is how it gets out of the way and lets you, the designer, actually design. Jekyll imposes no type of structure or framework, no default classes, layout, or coding conventions. You’re free to structure and style your content as you see fit. As such how you plan and author your styles is entirely up to you. There are, however, a few things you want to keep in mind when writing CSS for a Jekyll site.&lt;/p&gt;
+
+&lt;h3&gt;Location&lt;/h3&gt;
+
+&lt;p&gt;Normally I like to keep styles in a directory titled &lt;strong&gt;_css&lt;/strong&gt;. This naming convention doesn’t work for Jekyll, as an underscore at the beginning of a directory signals Jekyll to process the contents of the directory and not to include it in the final directory structure. As such to ensure your CSS is copied to the finished site be sure to name it &lt;strong&gt;css&lt;/strong&gt; or a similar name that doesn’t start with an underscore.&lt;/p&gt;
+
+&lt;h3&gt;Linking&lt;/h3&gt;
+
+&lt;p&gt;There are essentially two ways to link to external resources like CSS within Jekyll pages and templates. One would be to use the site baseURL to prefix your CSS files:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;{{ site.baseurl }}/css/main.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If your site will always be served from the root folder, you can eliminate the &lt;code&gt;site.url&lt;/code&gt; object and just use a &lt;strong&gt;site-root relative&lt;/strong&gt; link:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/css/main.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s important to note here that relative links for assets like CSS can be difficult when hosting sites on &lt;a href=&quot;https://pages.github.com/&quot; title=&quot;Github Pages&quot;&gt;Github Pages&lt;/a&gt;. Essentially there are two ways to host pages on Github Pages, as either user/organization pages or project pages.&lt;/p&gt;
+
+&lt;p&gt;User and organization pages live in a GitHub repository dedicated to only the GitHub Pages files and are stored in the &lt;strong&gt;master branch&lt;/strong&gt;. This repository must be named after the account name, which will be &lt;strong&gt;username.github.io&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Project Pages are stored in the same repository as the project they are for, except that the website content is stored in a specially named &lt;strong&gt;gh-pages&lt;/strong&gt; branch. The &lt;strong&gt;master&lt;/strong&gt; branch can hold the project itself, or even be empty.&lt;/p&gt;
+
+&lt;p&gt;This matters because if the site is served through a project page, its baseURL changes as the site is served through a subpath of your user domain at &lt;strong&gt;username.github.io/project&lt;/strong&gt;. This means that in these cases, you’ll need to set your baseURL to &lt;code&gt;/project-name&lt;/code&gt;. Note the leading slash and no trailing slash. This can also lead to problems when testing the files locally, so be sure to read Jekyll’s documentation on &lt;a href=&quot;http://jekyllrb.com/docs/github-pages/&quot; title=&quot;Github Pages documentation&quot;&gt;hosting with Github Pages&lt;/a&gt; for a full account.&lt;/p&gt;
+
+&lt;h3&gt;Jekyll and SASS&lt;/h3&gt;
+
+&lt;p&gt;Jekyll comes with built-in support for SASS, so there’s no need to install or modify your configuration in order to make it work. There are, however, one or two things you need to keep in mind as you work with SASS in Jekyll.&lt;/p&gt;
+
+&lt;p&gt;First, in order to ensure Jekyll processes SASS files, you need to put an empty front matter string at the top of the page. You can include a comment if you’d like, but it doesn’t really matter. So include this at the top of each SASS file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+# Front matter added to ensure Jekyll processes file.
+---
+
+// write styles after front matter
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you look at Jekyll’s default directory structure, you no doubt saw the &lt;strong&gt;_sass&lt;/strong&gt; directory, which can lead to some confusion about where to place SASS files. Jekyll copies over any processed SASS file in the exact same location it was processed. So, if you have the file &lt;strong&gt;css/styles.scss&lt;/strong&gt; it will be processed and placed at &lt;strong&gt;css/styles.css&lt;/strong&gt; in the generated site. The &lt;strong&gt;_sass&lt;/strong&gt; directory is for SASS import files. If you place the partial &lt;code&gt;.scss&lt;/code&gt; files that you are importing and use &lt;code&gt;@import&lt;/code&gt; to assemble them into your main stylesheet, Jekyll will process and assemble them at runtime.&lt;/p&gt;
+
+&lt;p&gt;So if you do something like this in your main &lt;code&gt;.scss&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+# Front matter added to ensure Jekyll processes file.
+---
+
+// Imports
+@import &quot;type&quot;;
+@import &quot;layout&quot;;
+@import &quot;components&quot;;
+
+//styles
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Place the files &lt;code&gt;type.scss&lt;/code&gt;, &lt;code&gt;layout.scss&lt;/code&gt;, and &lt;code&gt;components.scss&lt;/code&gt; in the &lt;strong&gt;_sass&lt;/strong&gt; directory and Jekyll will do the rest!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/css</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/css</guid>
+        
+        <category>jekyll</category>
+        
+        <category>web design</category>
+        
+        <category>css</category>
+        
+        <category>github pages</category>
+        
+        <category>sass</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>YAML front matter</title>
+        <description>&lt;p&gt;YAML front matter is perhaps the most important aspect of creating sites through Jekyll. It allows you to control how Jekyll processes and builds pages, create page-specific variables, and triggers file processing. Let’s take a closer look at front matter and how it can help you create more efficient Jekyll sites.&lt;/p&gt;
+
+&lt;p&gt;The front matter must be the first item in a file and must take the form of valid YAML set between triple-dashed lines. Here is a basic example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Welcome to Jekyll&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;2015-08-15 12:34&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;James Williamson&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example Jekyll is instructed to use the &lt;strong&gt;default.html&lt;/strong&gt; template for the content, and page variables for both the &lt;strong&gt;title&lt;/strong&gt; of the page and the &lt;strong&gt;author&lt;/strong&gt; are created. These can be written to the page using the &lt;code&gt;page.title&lt;/code&gt; and &lt;code&gt;page.author&lt;/code&gt; objects. A &lt;strong&gt;date&lt;/strong&gt; for the page is given as well, and when used for a Post this will override the date used in the name of the post.&lt;/p&gt;
+
+&lt;p&gt;There are many predefined Global variables that you can set in the front matter of a page or post. These are:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;layout&lt;/dt&gt;
+  &lt;dd&gt;Specifies which template to use for the content. As such it must point to a file in the &lt;strong&gt;_layouts&lt;/strong&gt; directory. Do not add the file extension to the template name. To reference the &lt;strong&gt;post.html&lt;/strong&gt; template you would add &lt;code&gt;layout: post&lt;/code&gt;.&lt;/dd&gt;
+  &lt;dt&gt;permalink&lt;/dt&gt;
+  &lt;dd&gt;Sets the permalink for the targeted file and is used to overwrite the default permalink style for a post. For example, the setting &lt;code&gt;permalink: /blog/:title&lt;/code&gt; would overwrite the site permalink settings and locate the post at &lt;strong&gt;/blog/post-title/index.html&lt;/strong&gt;.&lt;/dd&gt;
+  &lt;dt&gt;published&lt;/dt&gt;
+  &lt;dd&gt;A boolean value that you can set to &lt;strong&gt;false&lt;/strong&gt; if you don’t want the post published as the site is generated.&lt;/dd&gt;
+  &lt;dt&gt;category&lt;/dt&gt;
+  &lt;dt&gt;categories&lt;/dt&gt;
+  &lt;dd&gt;Assigns a single category or space-separated list of categories to a post. Categories can be used in permalinks and are hierarchical in nature. Allows you to structure posts like &lt;strong&gt;web-design/html/post-title/index.html&lt;/strong&gt;. Posts can also be organized and sorted by categories.&lt;/dd&gt;
+  &lt;dt&gt;tags&lt;/dt&gt;
+  &lt;dd&gt;Similar to categories, you can apply a single tag or multiples tags in a YAML list or a space-separated string. Although posts can be organized and sorted by tags, they can’t be used for permalinks like categories.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h3&gt;Custom variables&lt;/h3&gt;
+
+&lt;p&gt;In addition to the predefined Global Variables, you can create any custom variable you want. That variable can then be accessed by any page or post that uses that content.&lt;/p&gt;
+
+&lt;p&gt;The most common form of custom variable is to store information like page titles, author names, and descriptions that can be added to the page or in &lt;strong&gt;meta&lt;/strong&gt; tags to enhance page metadata. You can take this even further and control things like page layout as well. Let’s say that most pages in your site uses a simple sidebar, but occasionally you need to use a longer sidebar. In your template you could have the following markup:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;long&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;sidebar-long.html&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;sidebar.html&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now in any page or post that uses this template all you would need to add is the following variable to the front matter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sidebar-long: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Combining includes, templates, and front matter variables gives you an incredible amount of control over how pages are built, and limits the amount of variations you need in the form of templates.&lt;/p&gt;
+
+&lt;p&gt;You can even get to the point where you are generating entire pages with nothing but front matter. Let’s say you want to generate a single page for every tag that lists all posts tagged with that specific tag. You could create a template that generates everything dynamically based on the tag name. To create a new tag page, you simply name the file &lt;strong&gt;tag-name.md&lt;/strong&gt; and add the following to the front matter:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;tag-page&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Tagged with Jekyll&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Jekyll&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;/tags/:title&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The rest of the file could be empty and Jekyll would dynamically generate the page based on the tag name.&lt;/p&gt;
+
+&lt;h3&gt;SASS and CoffeeScript&lt;/h3&gt;
+
+&lt;p&gt;Jekyll provides built-in support for Sass and CoffeeScript, but won’t process those files automatically. To enable those files for processing, add an empty front matter region to the top of the page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The files will then be processed, and the resulting file will be located in the same directory in the generated site. The file &lt;strong&gt;css/layout.scss&lt;/strong&gt; would generate &lt;strong&gt;css/layout.css&lt;/strong&gt; in the finished site.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 09 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/front-matter</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/front-matter</guid>
+        
+        <category>jekyll</category>
+        
+        <category>web design</category>
+        
+        <category>yaml</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Markdown Basics</title>
+        <description>&lt;p&gt;In Jekyll, content for pages and posts can be written in either HTML or Markdown. Although there will be times that HTML is the more appropriate choice, Markdown provides a more natural writing environment that makes blogging easier and less of a chore. In this post we’ll examine how Jekyll uses Markdown and cover some basic Markdown syntax.&lt;/p&gt;
+
+&lt;p&gt;If you’ve never used it before, Markdown is a text-to-HTML converter that let’s you write text naturally in plain text format and then convert it to valid HTML. To learn more about it, read John Gruber’s post introducing Markdown on &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; title=&quot;Introducing Markdown&quot;&gt;Daring Fireball&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jekyll supports multiple Markdown rendering engines and allows you to specify which engine to use in the site’s configuration. Currently Jekyll supports &lt;a href=&quot;http://kramdown.gettalong.org/index.html&quot; title=&quot;Kramdown&quot;&gt;Kramdown&lt;/a&gt;, &lt;a href=&quot;https://github.com/vmg/redcarpet&quot; title=&quot;Redcarpet&quot;&gt;Redcarpet&lt;/a&gt;, and &lt;a href=&quot;http://dafoster.net/projects/rdiscount/&quot; title=&quot;Rdiscount&quot;&gt;RDiscount&lt;/a&gt;, although you’re free to use any rendering engine you have installed or even write your own!&lt;/p&gt;
+
+&lt;p&gt;To specify a rendering engine, simply add this line to your &lt;strong&gt;_config,yml&lt;/strong&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;markdown: kramdown
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the most part, the rendering engines are the same, although they do have subtle differences in syntax and element support. Currently Kramdown is the default Markdown renderer for Jekyll. Let’s take a look at some basic Kramdown syntax.&lt;/p&gt;
+
+&lt;p&gt;The following passage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#My main heading
+{: .intro }
+
+This is my initial paragraph. In it I’d like to provide a link to the [Jekyll homepage](http://jekyllrb.com/ &quot;Jekyll&quot;). I want to add **bold** and *italic* formatting to text as well using the `strong` and `emphasis` tags.
+
+This is another paragraph. I’d like to follow it with an unordered list.
+
+* item 1
+* item 2
+* item 3
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Would be rendered in HTML as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;intro&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;My main heading&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is my initial paragraph. In it I’d like to provide a link to the &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://jekyllrb.com/&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Jekyll&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Jekyll homepage&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;. I want to add &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;bold&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt; and &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;italic&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt; formatting to text as well using the &lt;span class=&quot;nt&quot;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;strong&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt; and &lt;span class=&quot;nt&quot;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;emphasis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt; tags.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is another paragraph. I’d like to follow it with an unordered list.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;item 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;item 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;item 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, Markdown frees you from many of the structural restraints that would make it difficult to author something like a blog post using HTML. To write two paragraphs, for example, you simply write two paragraphs, no &amp;lt;p&amp;gt; tags or special formatting required. Let’s take a quick look at how to format some of the basic HTML elements in Kramdown.&lt;/p&gt;
+
+&lt;h3&gt;Paragraphs&lt;/h3&gt;
+
+&lt;p&gt;Consecutive lines of text are formatted as a single paragraph. As a block level element, you must to add a blank line after it to separate it from other block-level elements.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a paragraph.
+
+This is as well.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a paragraph.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is as well.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Headings&lt;/h3&gt;
+
+&lt;p&gt;There are multiple ways to format headings in Kramdown. The easiest is to preceed the heading with hash characters (&lt;strong&gt;#&lt;/strong&gt;) equal to the heading level. An &lt;code&gt;h1&lt;/code&gt; for example, would be written as &lt;code&gt;#heading 1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is a heading 1
+
+## This is a heading 2
+
+### This is a heading 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;This is a heading 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;This is a heading 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;This is a heading 3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Blockquotes&lt;/h3&gt;
+
+&lt;p&gt;Blockquotes are formatted using the “greater than” character (&lt;strong&gt;&amp;gt;&lt;/strong&gt;) at the start of the blockquote. Text inside a blockquote is wrapped with a paragraph.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is a blockquote.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/blockquote&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Ordered Lists&lt;/h3&gt;
+
+&lt;p&gt;To create an ordered list, simply type a list started by a number followed by a period. Each list item should be on a separate line. Nested lists are created by indenting a list underneath an existing list item.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. This is the first item
+2. This is the second item
+3. This is the third item
+    1. This is a nested list
+    2. More nested list
+4. This is the fourth item.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;This is the first item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;This is the second item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;This is the third item
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;This is a nested list&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;More nested list&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;This is the fourth item.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Block-level attributes&lt;/h3&gt;
+
+&lt;p&gt;Often you may wish to assign attributes to block-level elements. To do this, follow the element with a &lt;em&gt;block inline attribute list&lt;/em&gt; (block IAL). A block IAL consists of a left curly brace, followed by a colon, the attribute definitions and a right curly brace.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Apply the class “main” to this heading
+{: .main}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Apply the class “main” to this heading&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Classes are applied with the syntax &lt;code&gt;.className&lt;/code&gt; and IDs with &lt;code&gt;#ID-name&lt;/code&gt;. For any other attribute you simply write the desired syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Another heading with the ‘role’ attribute applied
+{: role=&quot;banner&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;banner&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Another heading with the ‘role’ attribute applied
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For multiple attributes, create a space-separated list inside the blockIAL.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This heading has two classes and one ID applied
+{: .class1 .class2 #ID-1}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;class1 class2&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ID-1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;This heading has two classes and one ID applied&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Inline formatting&lt;/h3&gt;
+
+&lt;p&gt;Emphasis can be added to text by surrounding the text with either asterisks or underscores. This will result in wrapping the content in either the &lt;code&gt;strong&lt;/code&gt; or &lt;code&gt;emphasis&lt;/code&gt; tag depending upon how many are used:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I want to wrap **this text** in a strong tag and *this text* in an emphasis tag.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;I want to wrap &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;this text&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt; in a strong tag and &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;this text&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt; in an emphasis tag.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;You can create a link by surrounding the text with square brackets and then directly following it with the link URL in parentheses. To add a title attribute, add the desired title in straight quotes (“ “) after the link URL.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I usually search using [Google](https://www.google.com &quot;Google&quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;I usually search using &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://www.google.com&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Google&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Images&lt;/h3&gt;
+
+&lt;p&gt;Images are similar to links, but use an exclamation mark before the square brackets. The link text will become the alternative text of the image and the link URL specifies the image source.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![My dog](/images/Baxter.jpg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Renders as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/images/Baxter.jpg&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;My dog&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, Markdown is simple to write, and once you’ve learned the basic formatting options, generating semantic HTML is fairly simple. One of the most powerful Markdown features is the ability to nest HTML directly inside a Markdown document. That way if you’re unable to use Markdown to get exactly the HTML you need, you can simply inject HTML into the document and then continue using Markdown.&lt;/p&gt;
+
+&lt;p&gt;For more information on Kramdown and for a more complete reference, visit Kramdown’s &lt;a href=&quot;http://kramdown.gettalong.org/index.html&quot; title=&quot;Kramdown&quot;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/markdown-basics</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/markdown-basics</guid>
+        
+        <category>jekyll</category>
+        
+        <category>markdown</category>
+        
+        <category>html</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Liquid Syntax Basics</title>
+        <description>&lt;p&gt;Jekyll uses the &lt;a href=&quot;http://liquidmarkup.org/&quot; title=&quot;liquid&quot;&gt;Liquid&lt;/a&gt; template language to control the logic of templates and assemble pages dynamically. To get the most out of Jekyll, and to build effective templates you need to understand the basics of how Liquid works. In this post we’ll cover the basics of Liquid syntax so that as you begin to author templates, you’ll have a greater understanding of Jekyll’s capabilities and how Liquid can help you build more powerful sites.&lt;/p&gt;
+
+&lt;p&gt;Liquid was created in 2006 as a Ruby template language for the ecommerce site &lt;a href=&quot;https://docs.shopify.com/themes/liquid-documentation/basics&quot; title=&quot;Shopify themes&quot;&gt;Shopify&lt;/a&gt;. It remains an integral part of Shopify, but has been spun off for general use as well.&lt;/p&gt;
+
+&lt;p&gt;Liquid uses a combination of &lt;strong&gt;tags&lt;/strong&gt;, &lt;strong&gt;objects&lt;/strong&gt;, and &lt;strong&gt;filters&lt;/strong&gt; to load and format content. Within tags, logic can be applied to loop through objects, create variables, and apply conditional statements to control the building of content.&lt;/p&gt;
+
+&lt;p&gt;There are two basic types of markup in Liquid, &lt;strong&gt;output&lt;/strong&gt; and &lt;strong&gt;tags&lt;/strong&gt;. Output writes content to the page while tags perform some type of function, like looping through an array. Let’s explore output markup first.&lt;/p&gt;
+
+&lt;h3&gt;Output&lt;/h3&gt;
+
+&lt;p&gt;Output writes content to the page. Output tags start with two curly braces, contain the content to be written to the page, and then end with two curly braces. Here’s an example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;Written by &lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+Written by &lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+Written by &lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;james&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this instance the value of &lt;code&gt;author&lt;/code&gt; would be evaluated and written to the page, the &lt;code&gt;page&lt;/code&gt; object would be parsed to find the value of the &lt;code&gt;author&lt;/code&gt; property and that would be written to the page, and then the literal string “james” would be written to the page.&lt;/p&gt;
+
+&lt;p&gt;Output markup can be further modified through the use of filters. Filters are methods that can be used to transform the results of the output tags. Filters appear to the right of the output parameter, and are separated using the ‘pipe’ character &lt;code&gt;( | )&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here’s a filter in action:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date_to_string}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;&lt;/span&gt;
+&amp;lt;!--&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;would&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;output&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;‘&lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;Aug&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;’&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;--&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s also possible to use more than one filter at a time. Here are a few of the standard filters available in Liquid:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;date - reformat a date&lt;/li&gt;
+  &lt;li&gt;capitalize - capitalize words&lt;/li&gt;
+  &lt;li&gt;downcase - convert a string to lowercase&lt;/li&gt;
+  &lt;li&gt;upcase - convert a string to uppercase&lt;/li&gt;
+  &lt;li&gt;first - get the first element of an array&lt;/li&gt;
+  &lt;li&gt;last - get the last element of an array&lt;/li&gt;
+  &lt;li&gt;join - join elements of an array with specific character between them&lt;/li&gt;
+  &lt;li&gt;sort - sort elements of an array&lt;/li&gt;
+  &lt;li&gt;size - return the size of an array or string&lt;/li&gt;
+  &lt;li&gt;strip_html - strip html from string&lt;/li&gt;
+  &lt;li&gt;strip_newlines - strip all newlines from string&lt;/li&gt;
+  &lt;li&gt;replace - replace each occurrence&lt;/li&gt;
+  &lt;li&gt;replace_first - replace the first occurrence&lt;/li&gt;
+  &lt;li&gt;remove - remove each occurrence&lt;/li&gt;
+  &lt;li&gt;remove_first&lt;/li&gt;
+  &lt;li&gt;truncate - truncate a string down to x characters.&lt;/li&gt;
+  &lt;li&gt;truncatewords - truncate a string down to x words&lt;/li&gt;
+  &lt;li&gt;prepend - prepend a string&lt;/li&gt;
+  &lt;li&gt;append - append a string&lt;/li&gt;
+  &lt;li&gt;slice - slice a string. Takes an offset and length.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Filters are an incredibly powerful way to transform content within your templates. It’s important to understand how they work, and what their capabilities are, so that you can format content correctly as well as generate the desired output. For a full list of available filters and how they work, check out the &lt;a href=&quot;https://docs.shopify.com/themes/liquid-documentation/filters&quot; title=&quot;filters&quot;&gt;filter documentation&lt;/a&gt; on the Shopify site.&lt;/p&gt;
+
+&lt;h3&gt;Tags&lt;/h3&gt;
+
+&lt;p&gt;Liquid tags are functional, when applied they perform some type of action. They provide the basic programming logic for templates and allow you to build intelligent templates that can respond to a number of different factors. Tags are written with a curly brace followed by a percentage sign (&lt;em&gt;%&lt;/em&gt;), contain the desired instructions, and end with a percentage sign and a curly brace. Tags usually come in twos, with an opening tag and a closing tag that wraps the targeted content. Here’s an example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;About&amp;#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    About this blog
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example Jekyll would check the current page title. If the value is “About” then the text “About this blog” will be written to the page.&lt;/p&gt;
+
+&lt;p&gt;Tags are organized in four distinct categories; Control Flow, Iteration, Theme, and Variables. Control Flow tags are used to apply conditional logic, such as &lt;strong&gt;if/else&lt;/strong&gt; statements. Iteration tags allow you to loop through code and run code repeatedly. They contain tags like &lt;strong&gt;for loops&lt;/strong&gt; and &lt;strong&gt;cycles&lt;/strong&gt;. Theme tags are typically template-specific tags and allow you to output specific markup, add comments, control arrays, and handle pagination.&lt;/p&gt;
+
+&lt;p&gt;Here’s a sample of some of the more commonly used tags in templates:&lt;/p&gt;
+
+&lt;h3&gt;for loops&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;post&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;in&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;site.posts&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+      &amp;lt;li&amp;gt;
+	  &amp;lt;a href=&amp;quot;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&amp;quot;&amp;gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&amp;lt;/a&amp;gt;
+      &amp;lt;/li&amp;gt;
+&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Loops over collections, executing code for as long as the conditions within the loop lasts. In this example Jekyll would loop through all posts in the site and for each one create a list item that contains a link to that specific post via its URL and title. Note the use of output tags within the &lt;strong&gt;for&lt;/strong&gt; loop.&lt;/p&gt;
+
+&lt;h3&gt;if/else statements&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;previous_page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+     &amp;lt;a href=&amp;quot;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;previous_page_path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&amp;quot;&amp;gt;Previous&amp;lt;/a&amp;gt;
+  &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    &amp;lt;span&amp;gt;No previous posts&amp;lt;/span&amp;gt;
+  &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Allows the application of conditional logic within templates. In this example Jekyll would check to see if there are any posts older than the current one using the &lt;strong&gt;paginator&lt;/strong&gt; object. If so, a link would be created to the previous posts. If not a message is created stating that there are no previous posts. There are many variations on the if/else statements syntax including &lt;code&gt;elseif&lt;/code&gt;, &lt;code&gt;unless&lt;/code&gt;, and &lt;code&gt;case&lt;/code&gt; statements.&lt;/p&gt;
+
+&lt;h3&gt;includes&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;footer.html&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Inserts the included content at the desired location. In this example the contents of the file “footer.html” would be inserted at the location of the tag. Allows for the dynamic insertion of content.&lt;/p&gt;
+
+&lt;h3&gt;variables&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;james&amp;#39;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There are two main ways to assign variables using Liquid. The &lt;strong&gt;assign&lt;/strong&gt; method shown above assigns a literal string which is then stored for later use.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;capture&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;site_tags&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;tag&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;in&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;site.tags&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;unless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forloop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;,&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;endunless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endcapture&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;strong&gt;capture&lt;/strong&gt; method, shown above, captures the values inside of the opening and closing tags and stores it in a string. In the example shown Jekyll would loop through all tags in the site, pull each one out, and separate them with a comma. The resulting variable “site_tags” would contain a comma-separated list of all tags within the site.&lt;/p&gt;
+
+&lt;p&gt;Tags give you the ability to create templates that generate dynamic templates using intelligent logic. For more information on them, and for a complete list of available tags, check out the &lt;a href=&quot;https://docs.shopify.com/themes/liquid-documentation/tags&quot; title=&quot;tags documentation&quot;&gt;Liquid documentation&lt;/a&gt; on tags.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 07 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/liquid-syntax</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/liquid-syntax</guid>
+        
+        <category>liquid</category>
+        
+        <category>jekyll</category>
+        
+        <category>templates</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Configuration Options</title>
+        <description>&lt;p&gt;One of the main reasons to use a static site generator like Jekyll is the automation it provides for repetitive tasks and page generation. In Jekyll many of those automations are driven by the configuration file &lt;strong&gt;_config.yml&lt;/strong&gt;. In order to harness the true power of Jekyll it’s important to understand how this file works and what your options are when using it.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;_config.yml&lt;/strong&gt; sits in the root of your source directory and, as the name suggests, controls the configuration options for your site. Let’s break down the options in the sample &lt;strong&gt;_config.yml&lt;/strong&gt; that’s created when you generate a new Jekyll site before moving on to covering the Global config options.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Site settings
+
+title: Your awesome site
+email: your-email@domain.com
+description: &amp;gt; # this means to ignore newlines until &quot;baseurl:&quot;
+    Write an awesome description for your new site here.
+    You can edit this line in _config.yml. It will appear
+    in your document head meta (for Google search results)
+    and in your feed.xml site description.
+baseurl: &quot;&quot; # the subpath of your site, e.g. /blog/
+url: &quot;http://yourdomain.com&quot; # the base hostname &amp;amp; protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+
+markdown: kramdown
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The important thing to note here is that they’ve split the configuration options into two sections, site settings and build settings. All of the site settings other than &lt;strong&gt;baseurl&lt;/strong&gt; and &lt;strong&gt;url&lt;/strong&gt; are basically site variables that can be reused throughout the site. As such, they are all optional. Storing the &lt;strong&gt;title&lt;/strong&gt; of the site in a variable, for instance, makes it easy to set the title element for pages, or to use it in a heading element on a page. By setting these variables in the &lt;strong&gt;_config.yml&lt;/strong&gt; file they are available to any page throughout the site. You could access the title, for example, by using the Liquid tag &lt;code&gt;{{site.title}}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;There is a difference between the &lt;code&gt;site.url&lt;/code&gt; and &lt;code&gt;site.baseurl&lt;/code&gt; objects and when you need them. By default, the &lt;code&gt;site.url&lt;/code&gt; variable is used in the page head for things like canonical links and links to the RSS feed that are accessed by external systems, although it can be used to create absolute links within your site.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;site.baseurl&lt;/code&gt; variable indicates the root folder of your site. By default it is set to “ “ (empty string), which indicates your site is hosted at the root of http://yourdomain.com. However, if your site is located in http://yourdomain.com/blog, you have to set &lt;code&gt;site.baseurl&lt;/code&gt; to &lt;strong&gt;/blog&lt;/strong&gt; (note the slash). This will allow you to create relative links to assets that load correctly.&lt;/p&gt;
+
+&lt;p&gt;When creating your own site, you should give careful consideration to what type of information to store in your &lt;strong&gt;_config.yml&lt;/strong&gt; file. Being able to access this data at any time throughout your site is a powerful option.&lt;/p&gt;
+
+&lt;p&gt;Below the site settings the default config file contains a section for “build settings.” Even though they only include a single option here, this section hints at the fact that you can use the  &lt;strong&gt;_config.yml&lt;/strong&gt; file to control much of the site’s serve and build options. The lone option here instructs Jekyll to use Kramdown as its Markdown converter. Here are a few other options you can use when controlling the serve and build processes:&lt;/p&gt;
+
+&lt;h3&gt;local port&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;port: PORT
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Listen to the given port. 4000 is the default.&lt;/p&gt;
+
+&lt;h3&gt;base URL&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;baseurl: URL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Serves the website from the given base URL, for example &lt;strong&gt;/blog&lt;/strong&gt; would serve the home page from the blog subdirectory. Can be used to construct URLs throughout the site as well.&lt;/p&gt;
+
+&lt;h3&gt;source&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;source: &amp;lt;directory&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sets the directory Jekyll uses as the root directory for building files. By default it’s the current directory that the &lt;code&gt;build&lt;/code&gt; command is run in.&lt;/p&gt;
+
+&lt;h3&gt;destination&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;destination: &amp;lt;directory&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sets the directory where Jekyll writes the built site. By default Jekyll creates a &lt;code&gt;_site&lt;/code&gt; directory in the &lt;code&gt;source&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;h3&gt;exclude&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;exclude: [DIR, FILE, ...]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lists files and directories to exclude from the build process. Useful for source asset files like .psd files and other files that are not part of the build process or final site.&lt;/p&gt;
+
+&lt;h3&gt;include&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;include: [DIR, FILE, ...]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lists files and directories that are copied over to the finished site regardless of their filetype or extension. Dotfiles, for example, are excluded from the build, so you could force the inclusion of a .gitignore or .htaccess file. The default value for &lt;code&gt;include&lt;/code&gt; contains .htacess.&lt;/p&gt;
+
+&lt;h3&gt;keep&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;keep_files: [DIR, FILE, ...]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;During the build process the destination folder is wiped clean before the site is regenerated. If you have files or directories in the destination folder that are not part of the build process this setting can preserve those files. Useful for favicon files or other site assets that are unlikely to change and not controlled by Jekyll.&lt;/p&gt;
+
+&lt;h3&gt;encoding&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;encoding: ENCODING
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sets the encoding used for files. The default is utf-8.&lt;/p&gt;
+
+&lt;h3&gt;permalink&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;permalink: [options]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Specifies the permalink style used for posts and controls the directory structure for generated posts. The default, &lt;code&gt;date&lt;/code&gt;, results in the permalink /YEAR/MO/DATE/name.html. Therefore a post titled &lt;strong&gt;2015-01-29-first-post.md&lt;/strong&gt; would have the permalink of /2015/01/29/first-post.html, and would be generated using that directory structure. For a full list of permalink options, see the &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot; title=&quot;permalinks&quot;&gt;Jekyll documentation on permalinks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;pagination&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;paginate: [num]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Allows you to set the number of blog posts to display on the &lt;strong&gt;index.html&lt;/strong&gt; page. This allows you to break your posts up and display them over a number of pages. For an overview of how pagination works, and how to also set the &lt;code&gt;paginate_path&lt;/code&gt; option, see the &lt;a href=&quot;http://jekyllrb.com/docs/pagination/&quot; title=&quot;pagination&quot;&gt;Jekyll documentation on pagination&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;More information&lt;/h3&gt;
+
+&lt;p&gt;This is a brief look at some of the configuration options available for your &lt;strong&gt;_confing.yml&lt;/strong&gt; file. For more information on configuration, and how to set global default options for pages, check the full &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot; title=&quot;configuration&quot;&gt;Jekyll documentation on site configuration&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 May 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/configuration</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/configuration</guid>
+        
+        <category>jekyll</category>
+        
+        <category>yaml</category>
+        
+        <category>markdown</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Basic Commands</title>
+        <description>&lt;p&gt;To control Jekyll you’ll run a series of commands within your command-line interface. The Jekyll gem gives you the &lt;code&gt;jekyll&lt;/code&gt; executable, which has several commands and options you can use to build and serve your site. Let’s explore these commands and their options:&lt;/p&gt;
+
+&lt;h3&gt;build&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll build
+&lt;span class=&quot;c&quot;&gt;#  The current directory will be generated into ./_site&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll build --destination &amp;lt;destination&amp;gt;
+&lt;span class=&quot;c&quot;&gt;#  The current folder will be generated into &amp;lt;destination&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll build --source &amp;lt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;&amp;gt; --destination &amp;lt;destination&amp;gt;
+&lt;span class=&quot;c&quot;&gt;# The &amp;lt;source&amp;gt; folder will be generated into &amp;lt;destination&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Build does just that; it takes the contents of the current directory and generates it into the destination directory. If that directory is not specified, it defaults to the &lt;code&gt;_site&lt;/code&gt; directory inside the current directory. Both the source and destination directories can be passed as options, just provide the path to the directory after the option.&lt;/p&gt;
+
+&lt;h3&gt;doctor&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll doctor
+&lt;span class=&quot;c&quot;&gt;#  Checks for URL conflicts&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;doctor&lt;/code&gt; command checks your site for URL conflicts, errors with your permalinks, and deprecation warnings. This can be especially useful if you’ve moved pages around or reorganized your site.&lt;/p&gt;
+
+&lt;h3&gt;help&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll &lt;span class=&quot;nb&quot;&gt;help&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Generates help documentation&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;help&lt;/code&gt; command generates a small help document that lists the current version of Jekyll, and reviews available commands and their options.&lt;/p&gt;
+
+&lt;h3&gt;new&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new &amp;lt;path&amp;gt;
+&lt;span class=&quot;c&quot;&gt;#  Generates new site scaffold in targeted directory&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new .
+&lt;span class=&quot;c&quot;&gt;#  Generates new site scaffold in current directory&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new --blank &amp;lt;path&amp;gt;
+&lt;span class=&quot;c&quot;&gt;#  Generates basic site scaffold with empty directories and files&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;new&lt;/code&gt; command generates a default Jekyll site in the specified directory. This is an extremely useful way to understand how Jekyll works, as you can explore and modify the default site. It’s also a great way to jump-start development, since many of the files and directories you need to create a Jekyll site will be created for you. The &lt;code&gt;blank&lt;/code&gt; option creates a minimal directory structure with no files and an empty index file.&lt;/p&gt;
+
+&lt;h3&gt;serve&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;span class=&quot;c&quot;&gt;# Builds site and serves it at http://localhost:4000/&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve --detach
+&lt;span class=&quot;c&quot;&gt;# Same as `jekyll serve` but will detach from the current terminal.&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve --no-watch
+&lt;span class=&quot;c&quot;&gt;# Same as `jekyll serve` but will not watch for changes or autoregenerate site.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;serve&lt;/code&gt; command generates the site and launches a built-in development server that allows you to preview your site. In its default option the server watches the source directory. Any changes made to source files will result in the server automatically regenerating those files and updating the site locally. To preview your site browse to http://localhost:4000/ unless you’ve specified a different base URL, in which case you’ll add that to the end of localhost:4000.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/basic-commands</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/basic-commands</guid>
+        
+        <category>jekyll</category>
+        
+        <category>terminal</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Exploring Jekyll</title>
+        <description>&lt;p&gt;Once Jekyll is installed you can begin to explore its functionality. In this post we’ll take a closer look at Jekyll’s default boilerplate site and discuss how you can use it to learn more about Jekyll.&lt;/p&gt;
+
+&lt;p&gt;The first step to exploring Jekyll is to create a new Jekyll site, serve it, and then preview it locally in your browser. Then you can begin to tweak the site to get a better understanding of how it all works together.&lt;/p&gt;
+
+&lt;h3&gt;Building a new site&lt;/h3&gt;
+
+&lt;p&gt;To build a new site, create a directory named &lt;code&gt;practice&lt;/code&gt; and navigate there in Terminal or whichever command line interface you’re using. Once there run the following commands:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll new explore
+&lt;span class=&quot;c&quot;&gt;# Creates the directory explore and builds a new boilerplate site inside it&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;explore
+&lt;span class=&quot;c&quot;&gt;# Navigates to explore, making it the current directory&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls
+&lt;span class=&quot;c&quot;&gt;# Lists the files and directories of the current site&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You should see a list of files and directories that were created inside your new &lt;strong&gt;explore&lt;/strong&gt; directory. A closer examination would reveal a structure similar to this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|---_config.yml
+|---_includes
+    |---footer.html
+    |---head.html
+    |---header.html
+|---_layouts
+    |---default.html
+    |---page.html
+    |---post.html
+|---_posts
+    |---2015-08-23-welcome-to-jekyll.markdown
+|---_sass
+    |---_base.scss
+    |---_layout.scss
+    |---_syntax-highlighting.scss
+|---about.md
+|---css
+    |---main.scss
+|---feed.xml
+|---index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some highlights: The &lt;strong&gt;_config.yml&lt;/strong&gt; file contains the configuration settings for the blog, the &lt;strong&gt;_includes&lt;/strong&gt; folder holds HTML snippets that are used to generate page regions, the &lt;strong&gt;_layouts&lt;/strong&gt; directory contains the templates used to assemble individual pages, and the &lt;strong&gt;_posts&lt;/strong&gt; folder holds the markdown files for individual posts. The &lt;strong&gt;about.md&lt;/strong&gt; and &lt;strong&gt;index.html&lt;/strong&gt; are individual pages, found on the root of the site. Note that pages can be created either using HTML or markdown.&lt;/p&gt;
+
+&lt;p&gt;Feel free to open any of the files in a text editor and explore them; just don’t make any changes yet!&lt;/p&gt;
+
+&lt;h3&gt;Serving your new site&lt;/h3&gt;
+
+&lt;p&gt;Now run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve
+&lt;span class=&quot;c&quot;&gt;# Builds the site in the _site directory and serves it at http://localhost:4000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you examine your directory structure you’ll now find a &lt;strong&gt;_site&lt;/strong&gt; directory that contains the generated site. Open up a browser and navigate to http://localhost:4000. Click through the site, explore the default post and note the default information. Using a text editor, open the markdown post in the &lt;strong&gt;_posts&lt;/strong&gt; directory. At the top of the file you’ll see the YAML front matter contained between the dashed lines. Change the title to “Exploring Jekyll.” Save the file and note in the Terminal window that the Jekyll server detects the change and regenerates the file. Refreshing the file in your browser should reflect the change you made to the default post.&lt;/p&gt;
+
+&lt;p&gt;Not all changes are automatically regenerated. Open the &lt;strong&gt;_config.yml&lt;/strong&gt; file in your text editor. Change the title of the site to “Working with Jekyll” and replace the placeholder contact information with your contact info and then save the file. Notice that the Jekyll server doesn’t automatically detect the change. Stop the server by typing &lt;code&gt;CTRL+C&lt;/code&gt; in the Terminal window. Run the &lt;code&gt;jekyll serve&lt;/code&gt; command again and refresh the page in your browser. You should now see your updated information.&lt;/p&gt;
+
+&lt;p&gt;From here begin to experiment with making changes to templates, adding posts, and modifying the overall site configuration. This is a practice site, so it’s totally okay to break it! By exploring and experimenting with the Jekyll boilerplate site you can get a better sense of how Jekyll works and how your own site should be structured.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 23 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/exploring-jekyll</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/exploring-jekyll</guid>
+        
+        <category>jekyll</category>
+        
+        <category>web design</category>
+        
+        <category>terminal</category>
+        
+        <category>blogging</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Installing Jekyll</title>
+        <description>&lt;p&gt;Getting started with Jekyll is relatively simple, although perhaps not &lt;em&gt;quite&lt;/em&gt; as simple as their documentation would have you believe. There are a number of dependencies and requirements you have to satisfy before installing and using Jekyll. Let’s explore those dependencies and talk about the process of getting started with Jekyll.&lt;/p&gt;
+
+&lt;p&gt;First, let’s cover what you’ll need to have installed before you can run Jekyll. As Jekyll is a Ruby app it helps if you’re on a Unix, Linux, or OS X system. According to Jekyll you &lt;em&gt;can&lt;/em&gt; get Jekyll to run on Windows, it just requires some work. I’ve never tried it, but &lt;a href=&quot;http://jekyll-windows.juthilo.com/&quot; title=&quot;jekyll for windows&quot;&gt;you can read more about the process here&lt;/a&gt; if you’re interested.&lt;/p&gt;
+
+&lt;p&gt;You’ll also need the latest versions of &lt;a href=&quot;https://www.ruby-lang.org&quot; title=&quot;ruby&quot;&gt;Ruby&lt;/a&gt; and &lt;a href=&quot;https://rubygems.org/&quot; title=&quot;ruby gems&quot;&gt;Ruby Gems&lt;/a&gt;. One of the easiest ways to ensure you’re using the right version of Ruby is to use &lt;a href=&quot;https://rvm.io&quot; title=&quot;Ruby version manager&quot;&gt;RVM&lt;/a&gt;, a Ruby version manager. It can be a bit of a pain to setup, but once installed making sure you have the latest version is as easy as typing the following into Terminal (where ‘2.2.3’ is the latest version number):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm install 2.2.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you’re on a Mac you’ll also need &lt;a href=&quot;https://developer.apple.com/xcode/&quot; title=&quot;xcode&quot;&gt;Xcode Command Line Tools&lt;/a&gt;. This can be a little tricky depending upon which version of OSX you’re using. If you’re using any version after Mavericks just type the following in Terminal:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gcc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;GCC is a compiler command, and requires Command Line Tools to work, so if they’re not installed OSX will prompt you to install it. For Mavericks or earlier you’ll need to manually download Xcode from Apple and select the “Install Command Line Tools” option when installing it.&lt;/p&gt;
+
+&lt;p&gt;By now you’ve probably noticed that you’ll be spending a good bit of time in Terminal or in the command line when installing and using Jekyll. If you’re already comfortable with Terminal that shouldn’t really be a problem for you. Some of you, however, are probably pretty nervous at the thought of having to spend that much time in the command line. I totally understand if you fit into that category, I’m not that comfortable myself. The first time I tried to install Jekyll I had a terrible time getting my dependencies set up. In the end it had more to do with the version of OSX I was using, but it was a longer process than I was prepared for. Here’s my Twitter stream during that time:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/jekyll-for-designers/images/jekyll_install.jpg&quot; alt=&quot;My Twitter stream&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just be prepared to spend some time getting everything set up, and don’t get discouraged if what you’re doing doesn’t work right away. Spend some time researching any error messages that shows up and you’ll be fine.&lt;/p&gt;
+
+&lt;p&gt;Once all your dependencies are installed you’re ready to install Jekyll. For the most part it’s very straightforward, all you’ll need to do is type the following at the command line prompt:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you run into permission issues, add ‘sudo’ before &lt;strong&gt;gem&lt;/strong&gt; and that should do the trick. If you’re planning on using Github Pages to deploy and host your site, you might want to ensure you’re using the same version of Jekyll and Liquid as Github Pages. You can check those version numbers on the &lt;a href=&quot;https://github.com/github/pages-gem/blob/master/lib/github-pages.rb&quot; title=&quot;Github Pages&quot;&gt;Github Pages Gem repository&lt;/a&gt;. To do version specific installs you’d do the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem update --system
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install liquid -v 2.6.2
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll -v 2.4.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Those version numbers are correct as of August of 2015, but be sure to check prior to doing your own install. Once you’ve got Jekyll installed you’re ready to start using it! We’ll take a look at basic Jekyll functionality in our next post!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/installing-jekyll</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/installing-jekyll</guid>
+        
+        <category>jekyll</category>
+        
+        <category>web design</category>
+        
+        <category>terminal</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;Welcome to the companion site for the &lt;a href=&quot;http://www.lynda.com&quot; title=&quot;lynda.com&quot;&gt;lynda.com&lt;/a&gt; course &lt;em&gt;Jekyll for Web Designers&lt;/em&gt;. This course is designed to present Jekyll to web designers in a clear, concise way. In this post we’ll take a quick look at how Jekyll works, and whether it’s right for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/&quot; title=&quot;jekyll&quot;&gt;Jekyll&lt;/a&gt; bills itself as “a simple, blog-aware, static site generator.” It takes source files like templates, stylesheets, includes, and posts and uses them to generate a website that can then be hosted on your server of choice. This means that the entire website is generated at once, and visitors are simply served static files. This can be much faster than blogging platforms like WordPress, which use a CMS to generate pages as they’re requested. &lt;a href=&quot;/jekyll-for-designers/index.html&quot; title=&quot;articles&quot;&gt;This blog&lt;/a&gt;, for example, was generated from a series of templates, posts, html snippets, and CSS using Jekyll.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When you remove layers, simplicity and speed happen.
+&lt;cite&gt;— Ginni Rometty&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Although Jekyll is built to be “blog aware,” it’s important to point out that it is not blogging software in the traditional sense. It’s simply a parsing engine that builds what you put into it. This means that while you have total control over every aspect of your site, you also have to build everything as well. That may sound daunting at first, but once you get the hang of how it works you can quickly and easily start building Jekyll-driven sites.&lt;/p&gt;
+
+&lt;h3&gt;How Jekyll works&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a Ruby-based parsing engine that uses &lt;a href=&quot;http://yaml.org/&quot; title=&quot;YAML&quot;&gt;YAML&lt;/a&gt;, the &lt;a href=&quot;http://liquidmarkup.org/&quot; title=&quot;liquid&quot;&gt;Liquid Templating language&lt;/a&gt;, and &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; title=&quot;markdown&quot;&gt;Markdown&lt;/a&gt; to assemble content into HTML. That might sound confusing at first, but it’s really pretty simple. YAML is used to store data, site variables, and what is known as “front matter,” which drives things like the layout used for a post or page. Liquid is used to build the templates that pages are built from, and Markdown can be used to format content for individual posts or pages. You can also use regular HTML to format content as well, but Markdown makes writing content much more natural. This post, for example, was written in Markdown.&lt;/p&gt;
+
+&lt;p&gt;A simple Jekyll directory looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;├── _config.yml 
+├── _includes 
+|   ├── footer.html 
+|   └── header.html 
+├── _layouts 
+|   ├── default.html 
+|   └── post.html 
+├── _posts 
+|   ├── 2015-07-29-my-second-post.md 
+|   └── 2015-06-15-my-first-post.md
+├──css 
+|   ├── main.css  
+├── _site  
+└── index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;strong&gt;_config.yml&lt;/strong&gt; file is a YAML file that contains the overall site configuration such as site title, author information, pagination, and permalinks. The &lt;strong&gt;_includes&lt;/strong&gt; directory holds HTML snippets that can be injected on any desired page with a simple Liquid tag. The &lt;strong&gt;_layouts&lt;/strong&gt; folder contains the HTML templates that are used to generate pages for the site, and the &lt;strong&gt;_posts&lt;/strong&gt; directory contains the individual blog posts, written in either Markdown or HTML. Note the naming convention for the posts. This is used to date stamp the posts and can be used for site organization and permalinks. The &lt;strong&gt;css&lt;/strong&gt; directory contains the CSS for the site, and in this case is not preceded by an underscore. Any directory without an underscore is not parsed, and is copied as-is when the site is generated. Jekyll also supports SASS, any &lt;strong&gt;.scss&lt;/strong&gt; files with YAML front matter would be parsed and processed. The &lt;strong&gt;_site&lt;/strong&gt; directory is where the generated site will be created. From there it can be uploaded to your server of choice. Finally the &lt;strong&gt;index.htm&lt;/strong&gt; file contains the content and blogging logic for the home page of the blog, and typically uses one of the templates for overall page structure.&lt;/p&gt;
+
+&lt;p&gt;In addition to the Liquid tags, Jekyll uses YAML front matter to guide the creation of pages. A post, for example, might have this YAML front matter at the top of the page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+
+layout: post
+
+title: &quot;My First Post&quot;
+
+category: jekyll
+
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This tells Jekyll to use the “post” template to assemble the page, and assigns the ‘title’ and ‘category’ variables that can be used on that page or throughout the site. Jekyll will process any file that contains YAML front matter. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. It can contain any of the predefined global variables such as &lt;strong&gt;layout&lt;/strong&gt;, &lt;strong&gt;permalink&lt;/strong&gt;, or &lt;strong&gt;category&lt;/strong&gt; or any custom variable you wish to create. If you wished to display the authors name, for example, you could add &lt;strong&gt;author: ‘author’s name’&lt;/strong&gt; to the front matter and then reference that in your templates using &lt;code&gt;{{page.author}}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Is Jekyll right for you?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll isn’t right for every designer, or every project. It’s perfect for smaller sites, blogs, portfolios, and project wikis, but might not be right for corporate sites or sites that require advanced functionality and heavy database usage.&lt;/p&gt;
+
+&lt;p&gt;Here are a few things to consider when considering Jekyll:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Comfort level with the command line.&lt;/strong&gt; Jekyll is built in Ruby and uses a command line interface. You don’t need to be a hard-core developer to use it, but you will need to make sure you can properly install Jekyll and it’s dependencies. From there most of the tasks you’ll perform with Jekyll are controlled from the command line. For the most part the commands are pretty simple, so don’t let this scare you off; just keep it in mind as you consider Jekyll.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Complexity level.&lt;/strong&gt; Jekyll is simplicity itself. You’re responsible for all the HTML, CSS, and JavaScript in your site. Unlike a CMS platform like WordPress there are no themes or existing site architecture to get in the way. Personally I love this level of control, but some designers like a bit more out of the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hosting requirements.&lt;/strong&gt; This is where Jekyll really shines. Being a static site generator means that all site generation occurs locally in the development environment. The resulting site can then be uploaded and hosted almost anywhere, as there are no requirements for database administration or server side code support. Jekyll is also the engine behind Github Pages, and integration with Git and Github is tight. You can even host your Jekyll blog for free on Github Pages. Once it’s set up publishing is as simple as writing a new post and making a commit.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Speed and security.&lt;/strong&gt; Since you’re serving static HTML, CSS, and JavaScript assets, Jekyll is typically faster than CMS-driven sites. Security is easier as well, as there’s no server-side administrator, database, or server-side code to hack into.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Data requirements.&lt;/strong&gt; Working with data in Jekyll is fairly basic. Data is typically stored in a YAML file in a fashion similar to JSON and referenced using Liquid tags. Advanced data requirements can be tricky and require a fair amount of extra work. If you need database functionality, or make heavy use of user data Jekyll might not be the best choice for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Extensibility.&lt;/strong&gt; Jekyll’s community is only a fraction of the size of WordPress or other CMS communities. As such, there aren’t as many plugins or add-ons for Jekyll as there are for other platforms. In many cases if you want to add functionality not included in the default jekyll build you’ll need to do it yourself. For security reasons Github Pages doesn’t allow plugins, so if you want to add plugins to a Github hosted site you’ll need to do some pretty painful workarounds.&lt;/p&gt;
+
+&lt;p&gt;I highly recommend checking out Jekyll and giving it a try, it might just be the tool you’re looking for. For a high-level view of Jekyll check out Tom Preston-Werner’s &lt;a href=&quot;http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html&quot; title=&quot;blog like a hacker&quot;&gt;post announcing the creation of Jekyll&lt;/a&gt;. It will give you a better understanding of the philosophy behind Jekyll and how it works. To dig deeper into Jekyll check out the &lt;a href=&quot;http://jekyllrb.com/&quot; title=&quot;jekyll&quot;&gt;Jekyll project page&lt;/a&gt; and &lt;a href=&quot;http://jekyllrb.com/docs/home/&quot; title=&quot;jekyll documentation&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 15 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/welcome-to-jekyll</link>
+        <guid isPermaLink="true">http://jameswillweb.github.io/jekyll-for-designers/jekyll-for-designers/blog/welcome-to-jekyll</guid>
+        
+        <category>jekyll</category>
+        
+        <category>web design</category>
+        
+        <category>blogging</category>
+        
+        <category>yaml</category>
+        
+        <category>liquid</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,150 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Installing Jekyll</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/installing-jekyll">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>Installing Jekyll</h2>
+            <time itemprop="dateCreated" datetime="2015-03-11 00:00:00 -0400">
+                March 11, 2015</time>
+        </header>
+        <p>Getting started with Jekyll is relatively simple, although perhaps not <em>quite</em> as simple as their documentation would have you believe. There are a number of dependencies and requirements you have to satisfy before installing and using Jekyll. Let’s explore those dependencies and talk about the process of getting started with Jekyll.</p>
+
+<p>First, let’s cover what you’ll need to have installed before you can run Jekyll. As Jekyll is a Ruby app it helps if you’re on a Unix, Linux, or OS X system. According to Jekyll you <em>can</em> get Jekyll to run on Windows, it just requires some work. I’ve never tried it, but <a href="http://jekyll-windows.juthilo.com/" title="jekyll for windows">you can read more about the process here</a> if you’re interested.</p>
+
+<p>You’ll also need the latest versions of <a href="https://www.ruby-lang.org" title="ruby">Ruby</a> and <a href="https://rubygems.org/" title="ruby gems">Ruby Gems</a>. One of the easiest ways to ensure you’re using the right version of Ruby is to use <a href="https://rvm.io" title="Ruby version manager">RVM</a>, a Ruby version manager. It can be a bit of a pain to setup, but once installed making sure you have the latest version is as easy as typing the following into Terminal (where ‘2.2.3’ is the latest version number):</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rvm install 2.2.3</code></pre></div>
+
+<p>If you’re on a Mac you’ll also need <a href="https://developer.apple.com/xcode/" title="xcode">Xcode Command Line Tools</a>. This can be a little tricky depending upon which version of OSX you’re using. If you’re using any version after Mavericks just type the following in Terminal:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gcc</code></pre></div>
+
+<p>GCC is a compiler command, and requires Command Line Tools to work, so if they’re not installed OSX will prompt you to install it. For Mavericks or earlier you’ll need to manually download Xcode from Apple and select the “Install Command Line Tools” option when installing it.</p>
+
+<p>By now you’ve probably noticed that you’ll be spending a good bit of time in Terminal or in the command line when installing and using Jekyll. If you’re already comfortable with Terminal that shouldn’t really be a problem for you. Some of you, however, are probably pretty nervous at the thought of having to spend that much time in the command line. I totally understand if you fit into that category, I’m not that comfortable myself. The first time I tried to install Jekyll I had a terrible time getting my dependencies set up. In the end it had more to do with the version of OSX I was using, but it was a longer process than I was prepared for. Here’s my Twitter stream during that time:</p>
+
+<p><img src="/jekyll-for-designers/images/jekyll_install.jpg" alt="My Twitter stream" /></p>
+
+<p>Just be prepared to spend some time getting everything set up, and don’t get discouraged if what you’re doing doesn’t work right away. Spend some time researching any error messages that shows up and you’ll be fine.</p>
+
+<p>Once all your dependencies are installed you’re ready to install Jekyll. For the most part it’s very straightforward, all you’ll need to do is type the following at the command line prompt:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install jekyll</code></pre></div>
+
+<p>If you run into permission issues, add ‘sudo’ before <strong>gem</strong> and that should do the trick. If you’re planning on using Github Pages to deploy and host your site, you might want to ensure you’re using the same version of Jekyll and Liquid as Github Pages. You can check those version numbers on the <a href="https://github.com/github/pages-gem/blob/master/lib/github-pages.rb" title="Github Pages">Github Pages Gem repository</a>. To do version specific installs you’d do the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem update --system
+<span class="nv">$ </span>gem install liquid -v 2.6.2
+<span class="nv">$ </span>gem install jekyll -v 2.4.0</code></pre></div>
+
+<p>Those version numbers are correct as of August of 2015, but be sure to check prior to doing your own install. Once you’ve got Jekyll installed you’re ready to start using it! We’ll take a look at basic Jekyll functionality in our next post!</p>
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#web+design" title="Pages tagged web design" rel="tag">web design</a>, <a href="/jekyll-for-designers/tags/index.html#terminal" title="Pages tagged terminal" rel="tag">terminal</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+    <p class="prevLink"><a class="previous" href="/jekyll-for-designers/blog/welcome-to-jekyll">Welcome to Jekyll!</a></p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/exploring-jekyll">Exploring Jekyll</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>

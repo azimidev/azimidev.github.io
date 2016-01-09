@@ -1,0 +1,225 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Configuration Options</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/configuration">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>Configuration Options</h2>
+            <time itemprop="dateCreated" datetime="2015-05-14 00:00:00 -0400">
+                May 14, 2015</time>
+        </header>
+        <p>One of the main reasons to use a static site generator like Jekyll is the automation it provides for repetitive tasks and page generation. In Jekyll many of those automations are driven by the configuration file <strong>_config.yml</strong>. In order to harness the true power of Jekyll it’s important to understand how this file works and what your options are when using it.</p>
+
+<p>The <strong>_config.yml</strong> sits in the root of your source directory and, as the name suggests, controls the configuration options for your site. Let’s break down the options in the sample <strong>_config.yml</strong> that’s created when you generate a new Jekyll site before moving on to covering the Global config options.</p>
+
+<pre><code># Site settings
+
+title: Your awesome site
+email: your-email@domain.com
+description: &gt; # this means to ignore newlines until "baseurl:"
+    Write an awesome description for your new site here.
+    You can edit this line in _config.yml. It will appear
+    in your document head meta (for Google search results)
+    and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname &amp; protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+
+markdown: kramdown
+</code></pre>
+
+<p>The important thing to note here is that they’ve split the configuration options into two sections, site settings and build settings. All of the site settings other than <strong>baseurl</strong> and <strong>url</strong> are basically site variables that can be reused throughout the site. As such, they are all optional. Storing the <strong>title</strong> of the site in a variable, for instance, makes it easy to set the title element for pages, or to use it in a heading element on a page. By setting these variables in the <strong>_config.yml</strong> file they are available to any page throughout the site. You could access the title, for example, by using the Liquid tag <code>{{site.title}}</code>.</p>
+
+<p>There is a difference between the <code>site.url</code> and <code>site.baseurl</code> objects and when you need them. By default, the <code>site.url</code> variable is used in the page head for things like canonical links and links to the RSS feed that are accessed by external systems, although it can be used to create absolute links within your site.</p>
+
+<p>The <code>site.baseurl</code> variable indicates the root folder of your site. By default it is set to “ “ (empty string), which indicates your site is hosted at the root of http://yourdomain.com. However, if your site is located in http://yourdomain.com/blog, you have to set <code>site.baseurl</code> to <strong>/blog</strong> (note the slash). This will allow you to create relative links to assets that load correctly.</p>
+
+<p>When creating your own site, you should give careful consideration to what type of information to store in your <strong>_config.yml</strong> file. Being able to access this data at any time throughout your site is a powerful option.</p>
+
+<p>Below the site settings the default config file contains a section for “build settings.” Even though they only include a single option here, this section hints at the fact that you can use the  <strong>_config.yml</strong> file to control much of the site’s serve and build options. The lone option here instructs Jekyll to use Kramdown as its Markdown converter. Here are a few other options you can use when controlling the serve and build processes:</p>
+
+<h3>local port</h3>
+
+<pre><code>port: PORT
+</code></pre>
+
+<p>Listen to the given port. 4000 is the default.</p>
+
+<h3>base URL</h3>
+
+<pre><code>baseurl: URL
+</code></pre>
+
+<p>Serves the website from the given base URL, for example <strong>/blog</strong> would serve the home page from the blog subdirectory. Can be used to construct URLs throughout the site as well.</p>
+
+<h3>source</h3>
+
+<pre><code>source: &lt;directory&gt;
+</code></pre>
+
+<p>Sets the directory Jekyll uses as the root directory for building files. By default it’s the current directory that the <code>build</code> command is run in.</p>
+
+<h3>destination</h3>
+
+<pre><code>destination: &lt;directory&gt;
+</code></pre>
+
+<p>Sets the directory where Jekyll writes the built site. By default Jekyll creates a <code>_site</code> directory in the <code>source</code> directory.</p>
+
+<h3>exclude</h3>
+
+<pre><code>exclude: [DIR, FILE, ...]
+</code></pre>
+
+<p>Lists files and directories to exclude from the build process. Useful for source asset files like .psd files and other files that are not part of the build process or final site.</p>
+
+<h3>include</h3>
+
+<pre><code>include: [DIR, FILE, ...]
+</code></pre>
+
+<p>Lists files and directories that are copied over to the finished site regardless of their filetype or extension. Dotfiles, for example, are excluded from the build, so you could force the inclusion of a .gitignore or .htaccess file. The default value for <code>include</code> contains .htacess.</p>
+
+<h3>keep</h3>
+
+<pre><code>keep_files: [DIR, FILE, ...]
+</code></pre>
+
+<p>During the build process the destination folder is wiped clean before the site is regenerated. If you have files or directories in the destination folder that are not part of the build process this setting can preserve those files. Useful for favicon files or other site assets that are unlikely to change and not controlled by Jekyll.</p>
+
+<h3>encoding</h3>
+
+<pre><code>encoding: ENCODING
+</code></pre>
+
+<p>Sets the encoding used for files. The default is utf-8.</p>
+
+<h3>permalink</h3>
+
+<pre><code>permalink: [options]
+</code></pre>
+
+<p>Specifies the permalink style used for posts and controls the directory structure for generated posts. The default, <code>date</code>, results in the permalink /YEAR/MO/DATE/name.html. Therefore a post titled <strong>2015-01-29-first-post.md</strong> would have the permalink of /2015/01/29/first-post.html, and would be generated using that directory structure. For a full list of permalink options, see the <a href="http://jekyllrb.com/docs/permalinks/" title="permalinks">Jekyll documentation on permalinks</a>.</p>
+
+<h3>pagination</h3>
+
+<pre><code>paginate: [num]
+</code></pre>
+
+<p>Allows you to set the number of blog posts to display on the <strong>index.html</strong> page. This allows you to break your posts up and display them over a number of pages. For an overview of how pagination works, and how to also set the <code>paginate_path</code> option, see the <a href="http://jekyllrb.com/docs/pagination/" title="pagination">Jekyll documentation on pagination</a>.</p>
+
+<h3>More information</h3>
+
+<p>This is a brief look at some of the configuration options available for your <strong>_confing.yml</strong> file. For more information on configuration, and how to set global default options for pages, check the full <a href="http://jekyllrb.com/docs/configuration/" title="configuration">Jekyll documentation on site configuration</a>.</p>
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#yaml" title="Pages tagged yaml" rel="tag">yaml</a>, <a href="/jekyll-for-designers/tags/index.html#markdown" title="Pages tagged markdown" rel="tag">markdown</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+    <p class="prevLink"><a class="previous" href="/jekyll-for-designers/blog/basic-commands">Basic Commands</a></p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/liquid-syntax">Liquid Syntax Basics</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>

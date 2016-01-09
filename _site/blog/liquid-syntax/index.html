@@ -1,0 +1,228 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Liquid Syntax Basics</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/liquid-syntax">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>Liquid Syntax Basics</h2>
+            <time itemprop="dateCreated" datetime="2015-06-07 00:00:00 -0400">
+                June 7, 2015</time>
+        </header>
+        <p>Jekyll uses the <a href="http://liquidmarkup.org/" title="liquid">Liquid</a> template language to control the logic of templates and assemble pages dynamically. To get the most out of Jekyll, and to build effective templates you need to understand the basics of how Liquid works. In this post we’ll cover the basics of Liquid syntax so that as you begin to author templates, you’ll have a greater understanding of Jekyll’s capabilities and how Liquid can help you build more powerful sites.</p>
+
+<p>Liquid was created in 2006 as a Ruby template language for the ecommerce site <a href="https://docs.shopify.com/themes/liquid-documentation/basics" title="Shopify themes">Shopify</a>. It remains an integral part of Shopify, but has been spun off for general use as well.</p>
+
+<p>Liquid uses a combination of <strong>tags</strong>, <strong>objects</strong>, and <strong>filters</strong> to load and format content. Within tags, logic can be applied to loop through objects, create variables, and apply conditional statements to control the building of content.</p>
+
+<p>There are two basic types of markup in Liquid, <strong>output</strong> and <strong>tags</strong>. Output writes content to the page while tags perform some type of function, like looping through an array. Let’s explore output markup first.</p>
+
+<h3>Output</h3>
+
+<p>Output writes content to the page. Output tags start with two curly braces, contain the content to be written to the page, and then end with two curly braces. Here’s an example:</p>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid">Written by <span class="p">{{</span><span class="nv">author</span><span class="p">}}</span>
+Written by <span class="p">{{</span><span class="nv">page</span><span class="p">.</span><span class="nv">author</span><span class="p">}}</span>
+Written by <span class="p">{{</span><span class="s1">&#39;james&#39;</span><span class="p">}}</span></code></pre></div>
+
+<p>In this instance the value of <code>author</code> would be evaluated and written to the page, the <code>page</code> object would be parsed to find the value of the <code>author</code> property and that would be written to the page, and then the literal string “james” would be written to the page.</p>
+
+<p>Output markup can be further modified through the use of filters. Filters are methods that can be used to transform the results of the output tags. Filters appear to the right of the output parameter, and are separated using the ‘pipe’ character <code>( | )</code>.</p>
+
+<p>Here’s a filter in action:</p>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_string}}</span><span class="w"></span>
+&lt;!--<span class="w"> </span>would<span class="w"> </span>output<span class="w"> </span>‘<span class="mi">22</span><span class="w"> </span>Aug<span class="w"> </span><span class="mi">2015</span>’<span class="w"> </span>--&gt;</code></pre></div>
+
+<p>It’s also possible to use more than one filter at a time. Here are a few of the standard filters available in Liquid:</p>
+
+<ul>
+  <li>date - reformat a date</li>
+  <li>capitalize - capitalize words</li>
+  <li>downcase - convert a string to lowercase</li>
+  <li>upcase - convert a string to uppercase</li>
+  <li>first - get the first element of an array</li>
+  <li>last - get the last element of an array</li>
+  <li>join - join elements of an array with specific character between them</li>
+  <li>sort - sort elements of an array</li>
+  <li>size - return the size of an array or string</li>
+  <li>strip_html - strip html from string</li>
+  <li>strip_newlines - strip all newlines from string</li>
+  <li>replace - replace each occurrence</li>
+  <li>replace_first - replace the first occurrence</li>
+  <li>remove - remove each occurrence</li>
+  <li>remove_first</li>
+  <li>truncate - truncate a string down to x characters.</li>
+  <li>truncatewords - truncate a string down to x words</li>
+  <li>prepend - prepend a string</li>
+  <li>append - append a string</li>
+  <li>slice - slice a string. Takes an offset and length.</li>
+</ul>
+
+<p>Filters are an incredibly powerful way to transform content within your templates. It’s important to understand how they work, and what their capabilities are, so that you can format content correctly as well as generate the desired output. For a full list of available filters and how they work, check out the <a href="https://docs.shopify.com/themes/liquid-documentation/filters" title="filters">filter documentation</a> on the Shopify site.</p>
+
+<h3>Tags</h3>
+
+<p>Liquid tags are functional, when applied they perform some type of action. They provide the basic programming logic for templates and allow you to build intelligent templates that can respond to a number of different factors. Tags are written with a curly brace followed by a percentage sign (<em>%</em>), contain the desired instructions, and end with a percentage sign and a curly brace. Tags usually come in twos, with an opening tag and a closing tag that wraps the targeted content. Here’s an example:</p>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;About&#39;</span><span class="w"> </span><span class="p">%}</span>
+    About this blog
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>In this example Jekyll would check the current page title. If the value is “About” then the text “About this blog” will be written to the page.</p>
+
+<p>Tags are organized in four distinct categories; Control Flow, Iteration, Theme, and Variables. Control Flow tags are used to apply conditional logic, such as <strong>if/else</strong> statements. Iteration tags allow you to loop through code and run code repeatedly. They contain tags like <strong>for loops</strong> and <strong>cycles</strong>. Theme tags are typically template-specific tags and allow you to output specific markup, add comments, control arrays, and handle pagination.</p>
+
+<p>Here’s a sample of some of the more commonly used tags in templates:</p>
+
+<h3>for loops</h3>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>post<span class="w"> </span>in<span class="w"> </span>site.posts<span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;
+	  &lt;a href=&quot;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>&quot;&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;
+      &lt;/li&gt;
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>Loops over collections, executing code for as long as the conditions within the loop lasts. In this example Jekyll would loop through all posts in the site and for each one create a list item that contains a link to that specific post via its URL and title. Note the use of output tags within the <strong>for</strong> loop.</p>
+
+<h3>if/else statements</h3>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">paginator</span><span class="p">.</span><span class="nv">previous_page</span><span class="w"> </span><span class="p">%}</span>
+     &lt;a href=&quot;<span class="p">{{</span><span class="w"> </span><span class="nv">paginator</span><span class="p">.</span><span class="nv">previous_page_path</span><span class="w"> </span><span class="p">}}</span>&quot;&gt;Previous&lt;/a&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+    &lt;span&gt;No previous posts&lt;/span&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>Allows the application of conditional logic within templates. In this example Jekyll would check to see if there are any posts older than the current one using the <strong>paginator</strong> object. If so, a link would be created to the previous posts. If not a message is created stating that there are no previous posts. There are many variations on the if/else statements syntax including <code>elseif</code>, <code>unless</code>, and <code>case</code> statements.</p>
+
+<h3>includes</h3>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>footer.html<span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>Inserts the included content at the desired location. In this example the contents of the file “footer.html” would be inserted at the location of the tag. Allows for the dynamic insertion of content.</p>
+
+<h3>variables</h3>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;james&#39;</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{{</span><span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="p">}}</span></code></pre></div>
+
+<p>There are two main ways to assign variables using Liquid. The <strong>assign</strong> method shown above assigns a literal string which is then stored for later use.</p>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">site_tags</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>tag<span class="w"> </span>in<span class="w"> </span>site.tags<span class="w"> </span><span class="p">%}{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="p">}}</span>
+           <span class="p">{%</span><span class="w"> </span><span class="kr">unless</span><span class="w"> </span><span class="nv">forloop</span><span class="p">.</span><span class="nv">last</span><span class="w"> </span><span class="p">%}</span>,<span class="p">{%</span><span class="w"> </span><span class="kr">endunless</span><span class="w"> </span><span class="p">%}</span>
+      <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>The <strong>capture</strong> method, shown above, captures the values inside of the opening and closing tags and stores it in a string. In the example shown Jekyll would loop through all tags in the site, pull each one out, and separate them with a comma. The resulting variable “site_tags” would contain a comma-separated list of all tags within the site.</p>
+
+<p>Tags give you the ability to create templates that generate dynamic templates using intelligent logic. For more information on them, and for a complete list of available tags, check out the <a href="https://docs.shopify.com/themes/liquid-documentation/tags" title="tags documentation">Liquid documentation</a> on tags.</p>
+
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#liquid" title="Pages tagged liquid" rel="tag">liquid</a>, <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#templates" title="Pages tagged templates" rel="tag">templates</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+    <p class="prevLink"><a class="previous" href="/jekyll-for-designers/blog/configuration">Configuration Options</a></p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/markdown-basics">Markdown Basics</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>

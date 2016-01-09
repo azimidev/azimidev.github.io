@@ -1,0 +1,173 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Basic Commands</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/basic-commands">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>Basic Commands</h2>
+            <time itemprop="dateCreated" datetime="2015-04-30 00:00:00 -0400">
+                April 30, 2015</time>
+        </header>
+        <p>To control Jekyll you’ll run a series of commands within your command-line interface. The Jekyll gem gives you the <code>jekyll</code> executable, which has several commands and options you can use to build and serve your site. Let’s explore these commands and their options:</p>
+
+<h3>build</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll build
+<span class="c">#  The current directory will be generated into ./_site</span>
+
+<span class="nv">$ </span>jekyll build --destination &lt;destination&gt;
+<span class="c">#  The current folder will be generated into &lt;destination&gt;</span>
+
+<span class="nv">$ </span>jekyll build --source &lt;<span class="nb">source</span>&gt; --destination &lt;destination&gt;
+<span class="c"># The &lt;source&gt; folder will be generated into &lt;destination&gt;</span></code></pre></div>
+
+<p>Build does just that; it takes the contents of the current directory and generates it into the destination directory. If that directory is not specified, it defaults to the <code>_site</code> directory inside the current directory. Both the source and destination directories can be passed as options, just provide the path to the directory after the option.</p>
+
+<h3>doctor</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll doctor
+<span class="c">#  Checks for URL conflicts</span></code></pre></div>
+
+<p>The <code>doctor</code> command checks your site for URL conflicts, errors with your permalinks, and deprecation warnings. This can be especially useful if you’ve moved pages around or reorganized your site.</p>
+
+<h3>help</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll <span class="nb">help</span>
+<span class="c"># Generates help documentation</span></code></pre></div>
+
+<p>The <code>help</code> command generates a small help document that lists the current version of Jekyll, and reviews available commands and their options.</p>
+
+<h3>new</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll new &lt;path&gt;
+<span class="c">#  Generates new site scaffold in targeted directory</span>
+
+<span class="nv">$ </span>jekyll new .
+<span class="c">#  Generates new site scaffold in current directory</span>
+
+<span class="nv">$ </span>jekyll new --blank &lt;path&gt;
+<span class="c">#  Generates basic site scaffold with empty directories and files</span></code></pre></div>
+
+<p>The <code>new</code> command generates a default Jekyll site in the specified directory. This is an extremely useful way to understand how Jekyll works, as you can explore and modify the default site. It’s also a great way to jump-start development, since many of the files and directories you need to create a Jekyll site will be created for you. The <code>blank</code> option creates a minimal directory structure with no files and an empty index file.</p>
+
+<h3>serve</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll serve
+<span class="c"># Builds site and serves it at http://localhost:4000/</span>
+
+<span class="nv">$ </span>jekyll serve --detach
+<span class="c"># Same as `jekyll serve` but will detach from the current terminal.</span>
+
+<span class="nv">$ </span>jekyll serve --no-watch
+<span class="c"># Same as `jekyll serve` but will not watch for changes or autoregenerate site.</span></code></pre></div>
+
+<p>The <code>serve</code> command generates the site and launches a built-in development server that allows you to preview your site. In its default option the server watches the source directory. Any changes made to source files will result in the server automatically regenerating those files and updating the site locally. To preview your site browse to http://localhost:4000/ unless you’ve specified a different base URL, in which case you’ll add that to the end of localhost:4000.</p>
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#terminal" title="Pages tagged terminal" rel="tag">terminal</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+    <p class="prevLink"><a class="previous" href="/jekyll-for-designers/blog/exploring-jekyll">Exploring Jekyll</a></p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/configuration">Configuration Options</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>

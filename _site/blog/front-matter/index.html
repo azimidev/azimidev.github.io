@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>YAML front matter</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/front-matter">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>YAML front matter</h2>
+            <time itemprop="dateCreated" datetime="2015-07-09 00:00:00 -0400">
+                July 9, 2015</time>
+        </header>
+        <p>YAML front matter is perhaps the most important aspect of creating sites through Jekyll. It allows you to control how Jekyll processes and builds pages, create page-specific variables, and triggers file processing. Let’s take a closer look at front matter and how it can help you create more efficient Jekyll sites.</p>
+
+<p>The front matter must be the first item in a file and must take the form of valid YAML set between triple-dashed lines. Here is a basic example:</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">default</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Welcome to Jekyll</span>
+<span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2015-08-15 12:34</span>
+<span class="l-Scalar-Plain">author</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">James Williamson</span>
+<span class="nn">---</span></code></pre></div>
+
+<p>In this example Jekyll is instructed to use the <strong>default.html</strong> template for the content, and page variables for both the <strong>title</strong> of the page and the <strong>author</strong> are created. These can be written to the page using the <code>page.title</code> and <code>page.author</code> objects. A <strong>date</strong> for the page is given as well, and when used for a Post this will override the date used in the name of the post.</p>
+
+<p>There are many predefined Global variables that you can set in the front matter of a page or post. These are:</p>
+
+<dl>
+  <dt>layout</dt>
+  <dd>Specifies which template to use for the content. As such it must point to a file in the <strong>_layouts</strong> directory. Do not add the file extension to the template name. To reference the <strong>post.html</strong> template you would add <code>layout: post</code>.</dd>
+  <dt>permalink</dt>
+  <dd>Sets the permalink for the targeted file and is used to overwrite the default permalink style for a post. For example, the setting <code>permalink: /blog/:title</code> would overwrite the site permalink settings and locate the post at <strong>/blog/post-title/index.html</strong>.</dd>
+  <dt>published</dt>
+  <dd>A boolean value that you can set to <strong>false</strong> if you don’t want the post published as the site is generated.</dd>
+  <dt>category</dt>
+  <dt>categories</dt>
+  <dd>Assigns a single category or space-separated list of categories to a post. Categories can be used in permalinks and are hierarchical in nature. Allows you to structure posts like <strong>web-design/html/post-title/index.html</strong>. Posts can also be organized and sorted by categories.</dd>
+  <dt>tags</dt>
+  <dd>Similar to categories, you can apply a single tag or multiples tags in a YAML list or a space-separated string. Although posts can be organized and sorted by tags, they can’t be used for permalinks like categories.</dd>
+</dl>
+
+<h3>Custom variables</h3>
+
+<p>In addition to the predefined Global Variables, you can create any custom variable you want. That variable can then be accessed by any page or post that uses that content.</p>
+
+<p>The most common form of custom variable is to store information like page titles, author names, and descriptions that can be added to the page or in <strong>meta</strong> tags to enhance page metadata. You can take this even further and control things like page layout as well. Let’s say that most pages in your site uses a simple sidebar, but occasionally you need to use a longer sidebar. In your template you could have the following markup:</p>
+
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">sidebar</span><span class="err">-</span><span class="nv">long</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>sidebar-long.html<span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">%}</span>
+    <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>sidebar.html<span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span></code></pre></div>
+
+<p>Now in any page or post that uses this template all you would need to add is the following variable to the front matter:</p>
+
+<pre><code>sidebar-long: true
+</code></pre>
+
+<p>Combining includes, templates, and front matter variables gives you an incredible amount of control over how pages are built, and limits the amount of variations you need in the form of templates.</p>
+
+<p>You can even get to the point where you are generating entire pages with nothing but front matter. Let’s say you want to generate a single page for every tag that lists all posts tagged with that specific tag. You could create a template that generates everything dynamically based on the tag name. To create a new tag page, you simply name the file <strong>tag-name.md</strong> and add the following to the front matter:</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">tag-page</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Tagged with Jekyll</span>
+<span class="l-Scalar-Plain">tag</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Jekyll</span>
+<span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/tags/:title</span>
+<span class="nn">---</span></code></pre></div>
+
+<p>The rest of the file could be empty and Jekyll would dynamically generate the page based on the tag name.</p>
+
+<h3>SASS and CoffeeScript</h3>
+
+<p>Jekyll provides built-in support for Sass and CoffeeScript, but won’t process those files automatically. To enable those files for processing, add an empty front matter region to the top of the page:</p>
+
+<pre><code>---
+---
+</code></pre>
+
+<p>The files will then be processed, and the resulting file will be located in the same directory in the generated site. The file <strong>css/layout.scss</strong> would generate <strong>css/layout.css</strong> in the finished site.</p>
+
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#web+design" title="Pages tagged web design" rel="tag">web design</a>, <a href="/jekyll-for-designers/tags/index.html#yaml" title="Pages tagged yaml" rel="tag">yaml</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+    <p class="prevLink"><a class="previous" href="/jekyll-for-designers/blog/markdown-basics">Markdown Basics</a></p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/css">Jekyll and CSS</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>

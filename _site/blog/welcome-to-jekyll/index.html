@@ -1,0 +1,187 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Welcome to Jekyll!</title> 
+  <meta name="description" content="Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll.">
+  <link rel="canonical" href="/jekyll-for-designers/blog/welcome-to-jekyll">
+  <link rel="apple-touch-icon" href="/jekyll-for-designers/apple-touch-icon.png">
+  <link rel="stylesheet" href="/jekyll-for-designers/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="/jekyll-for-designers/scripts/modernizr.custom.js"></script>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header role="banner" class="page-header" id="top">
+ <h1>Jekyll for Web Designers</h1>
+ <p>A basic guide to Jekyll</p>
+<nav role="navigation">
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="toggle-label"><span>menu</span></label>
+<ul class="menu">
+  <li><a href="/jekyll-for-designers/index.html" title="Articles">Blog</a></li>
+  <li><a href="/jekyll-for-designers/about.html" title="learn more">About</a></li>
+  <li><a href="/jekyll-for-designers/resources.html" title="resources">Resources</a></li>
+  <li><a href="/jekyll-for-designers/tags/" title="Archive">Archive</a></li>
+  </ul>
+</nav>
+</header>
+	<main role="main" class="cf">
+<article class="posts">
+ <article role="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2>Welcome to Jekyll!</h2>
+            <time itemprop="dateCreated" datetime="2015-02-15 00:00:00 -0500">
+                February 15, 2015</time>
+        </header>
+        <p>Welcome to the companion site for the <a href="http://www.lynda.com" title="lynda.com">lynda.com</a> course <em>Jekyll for Web Designers</em>. This course is designed to present Jekyll to web designers in a clear, concise way. In this post we’ll take a quick look at how Jekyll works, and whether it’s right for you.</p>
+
+<p><a href="http://jekyllrb.com/" title="jekyll">Jekyll</a> bills itself as “a simple, blog-aware, static site generator.” It takes source files like templates, stylesheets, includes, and posts and uses them to generate a website that can then be hosted on your server of choice. This means that the entire website is generated at once, and visitors are simply served static files. This can be much faster than blogging platforms like WordPress, which use a CMS to generate pages as they’re requested. <a href="/jekyll-for-designers/index.html" title="articles">This blog</a>, for example, was generated from a series of templates, posts, html snippets, and CSS using Jekyll.</p>
+
+<blockquote>
+  <p>When you remove layers, simplicity and speed happen.
+<cite>— Ginni Rometty</cite></p>
+</blockquote>
+
+<p>Although Jekyll is built to be “blog aware,” it’s important to point out that it is not blogging software in the traditional sense. It’s simply a parsing engine that builds what you put into it. This means that while you have total control over every aspect of your site, you also have to build everything as well. That may sound daunting at first, but once you get the hang of how it works you can quickly and easily start building Jekyll-driven sites.</p>
+
+<h3>How Jekyll works</h3>
+
+<p>Jekyll is a Ruby-based parsing engine that uses <a href="http://yaml.org/" title="YAML">YAML</a>, the <a href="http://liquidmarkup.org/" title="liquid">Liquid Templating language</a>, and <a href="http://daringfireball.net/projects/markdown/" title="markdown">Markdown</a> to assemble content into HTML. That might sound confusing at first, but it’s really pretty simple. YAML is used to store data, site variables, and what is known as “front matter,” which drives things like the layout used for a post or page. Liquid is used to build the templates that pages are built from, and Markdown can be used to format content for individual posts or pages. You can also use regular HTML to format content as well, but Markdown makes writing content much more natural. This post, for example, was written in Markdown.</p>
+
+<p>A simple Jekyll directory looks like this:</p>
+
+<pre><code>├── _config.yml 
+├── _includes 
+|   ├── footer.html 
+|   └── header.html 
+├── _layouts 
+|   ├── default.html 
+|   └── post.html 
+├── _posts 
+|   ├── 2015-07-29-my-second-post.md 
+|   └── 2015-06-15-my-first-post.md
+├──css 
+|   ├── main.css  
+├── _site  
+└── index.html
+</code></pre>
+
+<p>The <strong>_config.yml</strong> file is a YAML file that contains the overall site configuration such as site title, author information, pagination, and permalinks. The <strong>_includes</strong> directory holds HTML snippets that can be injected on any desired page with a simple Liquid tag. The <strong>_layouts</strong> folder contains the HTML templates that are used to generate pages for the site, and the <strong>_posts</strong> directory contains the individual blog posts, written in either Markdown or HTML. Note the naming convention for the posts. This is used to date stamp the posts and can be used for site organization and permalinks. The <strong>css</strong> directory contains the CSS for the site, and in this case is not preceded by an underscore. Any directory without an underscore is not parsed, and is copied as-is when the site is generated. Jekyll also supports SASS, any <strong>.scss</strong> files with YAML front matter would be parsed and processed. The <strong>_site</strong> directory is where the generated site will be created. From there it can be uploaded to your server of choice. Finally the <strong>index.htm</strong> file contains the content and blogging logic for the home page of the blog, and typically uses one of the templates for overall page structure.</p>
+
+<p>In addition to the Liquid tags, Jekyll uses YAML front matter to guide the creation of pages. A post, for example, might have this YAML front matter at the top of the page:</p>
+
+<pre><code>---
+
+layout: post
+
+title: "My First Post"
+
+category: jekyll
+
+---
+</code></pre>
+
+<p>This tells Jekyll to use the “post” template to assemble the page, and assigns the ‘title’ and ‘category’ variables that can be used on that page or throughout the site. Jekyll will process any file that contains YAML front matter. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. It can contain any of the predefined global variables such as <strong>layout</strong>, <strong>permalink</strong>, or <strong>category</strong> or any custom variable you wish to create. If you wished to display the authors name, for example, you could add <strong>author: ‘author’s name’</strong> to the front matter and then reference that in your templates using <code>{{page.author}}</code>.</p>
+
+<h3>Is Jekyll right for you?</h3>
+
+<p>Jekyll isn’t right for every designer, or every project. It’s perfect for smaller sites, blogs, portfolios, and project wikis, but might not be right for corporate sites or sites that require advanced functionality and heavy database usage.</p>
+
+<p>Here are a few things to consider when considering Jekyll:</p>
+
+<p><strong>Comfort level with the command line.</strong> Jekyll is built in Ruby and uses a command line interface. You don’t need to be a hard-core developer to use it, but you will need to make sure you can properly install Jekyll and it’s dependencies. From there most of the tasks you’ll perform with Jekyll are controlled from the command line. For the most part the commands are pretty simple, so don’t let this scare you off; just keep it in mind as you consider Jekyll.</p>
+
+<p><strong>Complexity level.</strong> Jekyll is simplicity itself. You’re responsible for all the HTML, CSS, and JavaScript in your site. Unlike a CMS platform like WordPress there are no themes or existing site architecture to get in the way. Personally I love this level of control, but some designers like a bit more out of the box.</p>
+
+<p><strong>Hosting requirements.</strong> This is where Jekyll really shines. Being a static site generator means that all site generation occurs locally in the development environment. The resulting site can then be uploaded and hosted almost anywhere, as there are no requirements for database administration or server side code support. Jekyll is also the engine behind Github Pages, and integration with Git and Github is tight. You can even host your Jekyll blog for free on Github Pages. Once it’s set up publishing is as simple as writing a new post and making a commit.</p>
+
+<p><strong>Speed and security.</strong> Since you’re serving static HTML, CSS, and JavaScript assets, Jekyll is typically faster than CMS-driven sites. Security is easier as well, as there’s no server-side administrator, database, or server-side code to hack into.</p>
+
+<p><strong>Data requirements.</strong> Working with data in Jekyll is fairly basic. Data is typically stored in a YAML file in a fashion similar to JSON and referenced using Liquid tags. Advanced data requirements can be tricky and require a fair amount of extra work. If you need database functionality, or make heavy use of user data Jekyll might not be the best choice for you.</p>
+
+<p><strong>Extensibility.</strong> Jekyll’s community is only a fraction of the size of WordPress or other CMS communities. As such, there aren’t as many plugins or add-ons for Jekyll as there are for other platforms. In many cases if you want to add functionality not included in the default jekyll build you’ll need to do it yourself. For security reasons Github Pages doesn’t allow plugins, so if you want to add plugins to a Github hosted site you’ll need to do some pretty painful workarounds.</p>
+
+<p>I highly recommend checking out Jekyll and giving it a try, it might just be the tool you’re looking for. For a high-level view of Jekyll check out Tom Preston-Werner’s <a href="http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html" title="blog like a hacker">post announcing the creation of Jekyll</a>. It will give you a better understanding of the philosophy behind Jekyll and how it works. To dig deeper into Jekyll check out the <a href="http://jekyllrb.com/" title="jekyll">Jekyll project page</a> and <a href="http://jekyllrb.com/docs/home/" title="jekyll documentation">documentation</a>.</p>
+
+
+        <footer>
+        <p>Posted in <a href="/jekyll-for-designers/tags/index.html#jekyll" title="Pages tagged jekyll" rel="tag">jekyll</a>, <a href="/jekyll-for-designers/tags/index.html#web+design" title="Pages tagged web design" rel="tag">web design</a>, <a href="/jekyll-for-designers/tags/index.html#blogging" title="Pages tagged blogging" rel="tag">blogging</a>, <a href="/jekyll-for-designers/tags/index.html#yaml" title="Pages tagged yaml" rel="tag">yaml</a>, <a href="/jekyll-for-designers/tags/index.html#liquid" title="Pages tagged liquid" rel="tag">liquid</a></p>
+        </footer>
+    </article>
+    <section class="post-links">
+    <p>Read more:</p>
+  
+  
+    <p class="nextLink"><a class="next" href="/jekyll-for-designers/blog/installing-jekyll">Installing Jekyll</a></p>
+  
+	</section>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/jekyll-for-designers/tags/">All posts</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#blogging">blogging (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#css">css (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#deployment">deployment (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#git">git (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#github+pages">github pages (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#html">html (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#jekyll">jekyll (10)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#liquid">liquid (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#markdown">markdown (2)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#sass">sass (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#templates">templates (1)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#terminal">terminal (3)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#web+design">web design (5)</a></li>
+                
+                    <li><a href="/jekyll-for-designers/tags/#yaml">yaml (3)</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/jekyll-for-designers/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+    
+	  <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 James Williamson and <a href="http://www.lynda.com" title="lynda">lynda.com</a> | offered under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons License">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+</footer>
+
+    
+</body>
+</html>
