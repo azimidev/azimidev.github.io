@@ -774,7 +774,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	letter-spacing: 0.1em;
    }
    nav li a:hover {
-   	color: white;
+   	color: black;
    	background: #F0C832;
    }
 /* -------------------------------------------------- 
