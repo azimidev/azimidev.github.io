@@ -601,7 +601,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    main footer styles
    -----------------------------------------------------*/
    .page-footer {
-   	background: #4d4d4d;
+   	background: #415B76;
    	padding: 2em 1em;
    	margin-top: 1em;
    	color: white;
@@ -678,7 +678,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	display: none;
    }
    #menu-toggle:checked + .toggle-label {
-   	background: #4d4d4d;
+   	background: #F0C832;
    }
    #menu-toggle:checked + .toggle-label span {
    	display: none;
@@ -775,7 +775,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    }
    nav li a:hover {
    	color: white;
-   	background: #D43F3A;
+   	background: #F0C832;
    }
 /* -------------------------------------------------- 
    article styles
