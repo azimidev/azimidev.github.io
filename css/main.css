@@ -299,11 +299,11 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
   	margin: 0 0 1em 0;
   }
   a {
-  	color: #D43F3A;
+  	color: #415B76;
   	line-height: inherit;
   }
   a:hover {
-  	color: #FF8000;
+  	color: #D43F3A;
   }
   img, object, embed {
   	max-width: 100%;
