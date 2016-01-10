@@ -2,7 +2,7 @@
 title: Jekyll for Web Designers
 description: "Companion blog to the lynda.com course, Jekyll for Web Designers. This site is designed to present Jekyll to web designers in a clear, concise way, and provide a resource and reference for those that are new to Jekyll."
 baseurl: "http://alborz-restaurant.co.uk" 
-url: "http://alborz-restaurant.co.uk/"
+url: "http://alborz-restaurant.co.uk"
 tagline: A basic guide to Jekyll
 
 # Build settings
