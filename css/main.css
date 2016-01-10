@@ -299,7 +299,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
   	margin: 0 0 1em 0;
   }
   a {
-  	color: #42659A;
+  	color: #D43F3A;
   	line-height: inherit;
   }
   a:hover {
@@ -393,13 +393,13 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	font-size: 2em;
    	font-weight: 400;
    	line-height:1.2;
-   	color: #42659A;
+   	color: #415B76;
    	margin-bottom:0.2em;
    }
    article h3 {
    	font-weight: 400;
    	font-size: 1.4em;
-   	color: #42659A;
+   	color: #415B76;
    	margin-bottom: 0;
    }
    article h2 a {
@@ -431,7 +431,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	color: white;
    	padding: .5em 1em;
    	margin-bottom: 1em;
-   	border-left: 1em solid #42659A;
+   	border-left: 1em solid #415B76;
    	background: #666;
    	white-space: pre-wrap;
    	white-space: -moz-pre-wrap;
@@ -473,7 +473,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	font-family: 'Oswald', 'Helvetica Narrow', Arial, sans-serif;
    	font-size: 1.2em;
    	font-weight: 400;
-   	color: #42659A;
+   	color: #415B76;
    	margin-bottom:0;
    }
    dd {
@@ -531,7 +531,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    .tag-cloud a {
    	text-decoration: none;
    	font-size: 0.8em;
-   	background: #42659A;
+   	background: #415B76;
    	color: white;
    	padding: 0.125em 0.5em;
    	border-radius: 0.25em;
@@ -639,7 +639,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	display: none;
    }
    nav li {
-   	background: #42659A;
+   	background: #415B76;
    	margin-bottom: .2em;
    }
    nav li:hover {
@@ -664,7 +664,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    /*toggle check styles*/
    .toggle-label {
    	display: block;
-   	background: #42659A;
+   	background: #415B76;
    	font: 0.8em 'Oswald', 'Helvetica Narrow', Arial, sans-serif;
    	text-align: center;
    	letter-spacing: 0.1em;
@@ -766,7 +766,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    nav li a {
    	font: 1em 'Oswald', 'Helvetica Narrow', Arial, sans-serif;
    	color: white;
-   	background: #42659A;
+   	background: #D43F3A;
    	margin-right: 0.5em;
    	padding: .25em 1em;
    	display: inline-block;
