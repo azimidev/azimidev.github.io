@@ -282,8 +282,8 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
   Global settings
   -----------------------------------------------------*/
   body {
-  	font: 110% 'Roboto Slab', Georgia, serif;
-  	background: white;
+  	font: 100% 'Roboto Slab', Georgia, serif;
+  	background: beige;
   	direction: ltr;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -709,7 +709,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    layout styles
    -----------------------------------------------------*/
    html {
-   	background: #6d6d6d;
+   	background: #415B76;
    }
    body {
    	width: 80%;
