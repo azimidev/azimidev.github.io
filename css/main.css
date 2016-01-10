@@ -393,7 +393,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	font-size: 2em;
    	font-weight: 400;
    	line-height:1.2;
-   	color: #415B76;
+   	color: #415B76 !important;
    	margin-bottom:0.2em;
    }
    article h3 {
