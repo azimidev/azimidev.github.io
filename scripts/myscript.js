@@ -1,113 +1,107 @@
 $(function() {
 
-  "use strict";
+	"use strict";
 
-  var topoffset = 50; //variable for menu height
-  var slideqty = $('#featured .item').length;
-  var wheight = $(window).height(); //get the height of the window
-  var randSlide = Math.floor(Math.random()*slideqty);
+	var topoffset = 50; //variable for menu height
+	var slideqty  = $('#featured .item').length;
+	var wheight   = $(window).height(); //get the height of the window
+	var randSlide = Math.floor(Math.random() * slideqty);
 
-  $('#featured .item').eq(randSlide).addClass('active');
+	$('#featured .item').eq(randSlide).addClass('active');
 
+	$('.fullheight').css('height', wheight); //set to window tallness
 
-  $('.fullheight').css('height', wheight); //set to window tallness  
+	//replace IMG inside carousels with a background image
+	$('#featured .item img').each(function() {
+		var imgSrc = $(this).attr('src');
+		$(this).parent().css({'background-image' : 'url(' + imgSrc + ')'});
+		$(this).remove();
+	});
 
+	//adjust height of .fullheight elements on window resize
+	$(window).resize(function() {
+		wheight = $(window).height(); //get the height of the window
+		$('.fullheight').css('height', wheight); //set to window tallness
+	});
 
-  //replace IMG inside carousels with a background image
-  $('#featured .item img').each(function() {
-    var imgSrc = $(this).attr('src');
-    $(this).parent().css({'background-image': 'url('+imgSrc+')'});
-    $(this).remove();
-  });
+	//Activate Scrollspy
+	$('body').scrollspy({
+		target : 'header .navbar',
+		offset : topoffset
+	});
 
-  //adjust height of .fullheight elements on window resize
-  $(window).resize(function() {
-    wheight = $(window).height(); //get the height of the window
-    $('.fullheight').css('height', wheight); //set to window tallness  
-  });
+	// add inbody class
+	var hash = $(this).find('li.active a').attr('href');
+	if(hash !== '#featured') {
+		$('header nav').addClass('inbody');
+	} else {
+		$('header nav').removeClass('inbody');
+	}
 
+	// Add an inbody class to nav when scrollspy event fires
+	$('.navbar-fixed-top').on('activate.bs.scrollspy', function() {
+		var hash = $(this).find('li.active a').attr('href');
+		if(hash !== '#featured') {
+			$('header nav').addClass('inbody');
+		} else {
+			$('header nav').removeClass('inbody');
+		}
+	});
 
+	//Use smooth scrolling when clicking on navigation
+	$('.navbar a[href*=#]:not([href=#])').click(function() {
+		if(location.pathname.replace(/^\//, '') ===
+		   this.pathname.replace(/^\//, '') &&
+		   location.hostname === this.hostname) {
+			var target = $(this.hash);
+			target     = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if(target.length) {
+				$('html,body').animate({
+					scrollTop : target.offset().top - topoffset + 2
+				}, 500);
+				return false;
+			} //target.length
+		} //click function
+	}); //smooth scrolling
 
-  //Activate Scrollspy
-  $('body').scrollspy({
-    target: 'header .navbar',
-    offset: topoffset
-  });
+	//Automatically generate carousel indicators
+	for(var i = 0; i < slideqty; i++) {
+		var insertText = '<li data-target="#featured" data-slide-to="' + i + '"';
+		if(i === randSlide) {
+			insertText += ' class="active" ';
+		}
+		insertText += '></li>';
+		$('#featured ol').append(insertText);
+	}
 
-  // add inbody class
-  var hash = $(this).find('li.active a').attr('href');
-  if(hash !== '#featured') {
-    $('header nav').addClass('inbody');
-  } else {
-    $('header nav').removeClass('inbody');
-  }
+	$('.carousel').carousel({
+		pause : false
+	});
 
+	// Scroll Top
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 100) {
+			$('#scrollup').fadeIn();
+		} else {
+			$('#scrollup').fadeOut();
+		}
+	});
 
-  // Add an inbody class to nav when scrollspy event fires
-  $('.navbar-fixed-top').on('activate.bs.scrollspy', function() {
-    var hash = $(this).find('li.active a').attr('href');
-    if(hash !== '#featured') {
-      $('header nav').addClass('inbody');
-    } else {
-      $('header nav').removeClass('inbody');
-    }
-  });
+	$('#scrollup').click(function() {
+		$("html, body").animate({scrollTop : 0}, 1000);
+		return false;
+	});
 
-
-  //Use smooth scrolling when clicking on navigation
-  $('.navbar a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') === 
-      this.pathname.replace(/^\//,'') && 
-      location.hostname === this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top-topoffset+2
-        }, 500);
-        return false;
-      } //target.length
-    } //click function
-  }); //smooth scrolling
-
-  //Automatically generate carousel indicators
-  for (var i=0; i < slideqty; i++) {
-    var insertText = '<li data-target="#featured" data-slide-to="' + i + '"';
-    if (i === randSlide) {
-      insertText += ' class="active" ';
-    }
-    insertText += '></li>';
-    $('#featured ol').append(insertText);
-  }
-
-  $('.carousel').carousel({
-    pause: false
-  });
-
-    // Scroll Top
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('#scrollup').fadeIn();
-        } else {
-            $('#scrollup').fadeOut();
-        }
-    });
-
-    $('#scrollup').click(function() {
-        $("html, body").animate({scrollTop: 0}, 1000);
-        return false;
-    });
-
-  //------------------------------------------
-  var wow = new WOW({
-                  animateClass: 'animated',
-                  offset      : 100
-                });
-  //data-wow-delay="2s"
-  //data-wow-offset="300"
-  //data-wow-duration="2s"
-  //data-wow-iteration="infinite"
-  wow.init();
-  //------------------------------------------
+	//------------------------------------------
+	var wow = new WOW({
+		animateClass : 'animated',
+		offset       : 100
+	});
+	//data-wow-delay="2s"
+	//data-wow-offset="300"
+	//data-wow-duration="2s"
+	//data-wow-iteration="infinite"
+	wow.init();
+	//------------------------------------------
 });
 
