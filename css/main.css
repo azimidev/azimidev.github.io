@@ -584,18 +584,6 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
    	width: 32px;
    	height: 32px;
    }
-   .github {
-   	background: url(../images/github.svg) no-repeat;
-   }
-   .fb {
-   	background: url(../images/facebook.svg) no-repeat;
-   }
-   .linked {
-   	background: url(../images/linkedin.svg) no-repeat;
-   }
-   .twitter {
-   	background: url(../images/twitter.svg) no-repeat;
-   }
    
 /* -------------------------------------------------- 
    main footer styles
