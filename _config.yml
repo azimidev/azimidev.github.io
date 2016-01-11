@@ -1,14 +1,10 @@
 # Site settings
 title: Hassan Azimi
-description: "Hassan Azimi is based in London, United Kingdom Software Engineer and a Web Developer with the skills such as PHP, Ruby on Rails, Laravel, JavaScript, jQuery, WordPress, Joomla, CSS, HTML, Java, SQL, Node.JS, Git, GitHub, AJAX, Python, Unix, SEO and more."
-
-{% if jekyll.environment == "production" %}
-   baseurl: ""
-   url: ""
-{% else %}
-   baseurl: "http://hassanazimi.com"
-   url: "http://hassanazimi.com"
-{% endif %}
+description: "Hassan Azimi is based in London, United Kingdom Software Engineer and a Web Developer with the skills such as PHP, Ruby on Rails, Laravel, JavaScript, jQuery, WordPress, Joomla, CSS, HTML, Java, SQL, Node.JS, Git, GitHub, AJAX, Python, Unix, SEO and more"
+#baseurl: ""
+#url: ""
+baseurl: "http://hassanazimi.com"
+url: "http://hassanazimi.com"
 tagline: Software Engineer | Web Developer
 
 # Build settings
