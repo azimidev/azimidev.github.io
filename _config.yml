@@ -1,9 +1,9 @@
 # Site settings
-title: Jekyll Blog Template
+title: Hassan Azimi
 description: "Companion blog to the parsclick.net website. This site is designed to present Jekyll blog in a clear, concise way, and provide a resource and reference for those that are new to Jekyll."
 baseurl: "http://hassanazimi.com" 
 url: "http://hassanazimi.com"
-tagline: A basic guide to Jekyll Blog
+tagline: Software Engineer | Web Developer
 
 # Build settings
 markdown: kramdown
