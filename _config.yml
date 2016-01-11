@@ -1,8 +1,14 @@
 # Site settings
 title: Hassan Azimi
-description: "Companion blog to the parsclick.net website. This site is designed to present Jekyll blog in a clear, concise way, and provide a resource and reference for those that are new to Jekyll."
-baseurl: "http://hassanazimi.com" 
-url: "http://hassanazimi.com"
+description: "Hassan Azimi is based in London, United Kingdom Software Engineer and a Web Developer with the skills such as PHP, Ruby on Rails, Laravel, JavaScript, jQuery, WordPress, Joomla, CSS, HTML, Java, SQL, Node.JS, Git, GitHub, AJAX, Python, Unix, SEO and more."
+
+{% if jekyll.environment == "production" %}
+   baseurl: ""
+   url: ""
+{% else %}
+   baseurl: "http://hassanazimi.com"
+   url: "http://hassanazimi.com"
+{% endif %}
 tagline: Software Engineer | Web Developer
 
 # Build settings
