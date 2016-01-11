@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: http://amir.parsclick.net/sitemap.xml
