@@ -31,7 +31,7 @@ A simple Jekyll directory looks like this:
 ├── _posts 
 |   ├── 2015-07-29-my-second-post.md 
 |   └── 2015-06-15-my-first-post.md
-├──css 
+├── css 
 |   ├── main.css  
 ├── _site  
 └── index.html
