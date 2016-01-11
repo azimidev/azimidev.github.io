@@ -1,8 +1,8 @@
 # Site settings
 title: Hassan Azimi
 description: "Companion blog to the parsclick.net website. This site is designed to present Jekyll blog in a clear, concise way, and provide a resource and reference for those that are new to Jekyll."
-baseurl: "http://hassanazimi.com" 
-url: "http://hassanazimi.com"
+baseurl: "http://hassanazimi.com/blog" 
+url: "http://hassanazimi.com/blog"
 tagline: Software Engineer | Web Developer
 
 # Build settings
