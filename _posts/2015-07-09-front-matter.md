@@ -14,7 +14,7 @@ The front matter must be the first item in a file and must take the form of vali
 layout: default
 title: Welcome to Jekyll
 date: 2015-08-15 12:34
-author: James Williamson
+author: Amir Hassan Azimi
 ---
 
 {% endhighlight %}

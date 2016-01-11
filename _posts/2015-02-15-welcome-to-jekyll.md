@@ -5,7 +5,7 @@ date:   2015-02-15
 tags: [jekyll, web design, blogging, yaml, liquid]
 ---
 
-Welcome to the companion site for the [lynda.com](http://www.lynda.com "lynda.com") course *Jekyll for Web Designers*. This course is designed to present Jekyll to web designers in a clear, concise way. In this post we’ll take a quick look at how Jekyll works, and whether it’s right for you. 
+Welcome to the companion site for the [parsclick.net](http://www.parsclick.net "parsclick.net") course *Jekyll for Web Designers*. This course is designed to present Jekyll to web designers in a clear, concise way. In this post we’ll take a quick look at how Jekyll works, and whether it’s right for you. 
 
 [Jekyll][1] bills itself as “a simple, blog-aware, static site generator.” It takes source files like templates, stylesheets, includes, and posts and uses them to generate a website that can then be hosted on your server of choice. This means that the entire website is generated at once, and visitors are simply served static files. This can be much faster than blogging platforms like WordPress, which use a CMS to generate pages as they’re requested. [This blog]({{site.baseurl}}/index.html "articles"), for example, was generated from a series of templates, posts, html snippets, and CSS using Jekyll.
 
