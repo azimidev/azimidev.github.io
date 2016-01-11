@@ -1,9 +1,5 @@
--
--
--
--
--
--
+---
+---
 
 .highlight {
 	.hll { background-color: #ffffcc }
@@ -76,10 +72,10 @@
 	.vi { color: #98fb98} /* Name.Variable.Instance */
 	.il { color: #ffffff} /* Literal.Number.Integer.Long */
 	.bash .nv {
-		-webkit-user-select : none;
-		-moz-user-select    : none;
-		-ms-user-select     : none;
-		-o-user-select      : none;
-		user-select         : none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
 	}
 }
