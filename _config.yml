@@ -1,8 +1,8 @@
 # Site settings
 title: Jekyll Blog Template
 description: "Companion blog to the parsclick.net website. This site is designed to present Jekyll blog in a clear, concise way, and provide a resource and reference for those that are new to Jekyll."
-baseurl: "http://alborz-restaurant.co.uk" 
-url: "http://alborz-restaurant.co.uk"
+baseurl: "http://hassanazimi.com" 
+url: "http://hassanazimi.com"
 tagline: A basic guide to Jekyll Blog
 
 # Build settings
