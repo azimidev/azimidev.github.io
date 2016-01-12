@@ -310,7 +310,7 @@ th {
   Global settings
   -----------------------------------------------------*/
 body {
-	font       : 100% 'Roboto Slab', Georgia, serif;
+	font       : 100% 'Roboto', Georgia, serif;
 	background : beige;
 	direction  : ltr;
 }
@@ -597,7 +597,7 @@ dd {
 }
 
 .tag-cloud {
-	max-width : 600px;
+
 }
 
 .tag-cloud li {
@@ -612,7 +612,11 @@ dd {
 	background      : #415B76;
 	color           : white;
 	padding         : 0.125em 0.5em;
-	border-radius   : 0.25em;
+	border-radius   : 1em;
+}
+
+.tag-cloud a:hover {
+	color: #FFF000;
 }
 
 .return {
@@ -868,7 +872,6 @@ aside li {
 		font            : 1em 'Oswald', 'Helvetica Narrow', Arial, sans-serif;
 		color           : white;
 		background      : #D43F3A;
-		margin-right    : 0.5em;
 		padding         : .25em 1em;
 		display         : inline-block;
 		text-decoration : none;
