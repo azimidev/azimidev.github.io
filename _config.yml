@@ -1,13 +1,17 @@
 # Site settings
 title: Hassan Azimi
 description: "Hassan Azimi is based in London, United Kingdom Software Engineer and a Web Developer with the skills such as PHP, Ruby on Rails, Laravel, JavaScript, jQuery, WordPress, Joomla, CSS, HTML, Java, SQL, Node.JS, Git, GitHub, AJAX, Python, Unix, SEO and more"
-#baseurl: ""
-#url: ""
-baseurl: "http://hassanazimi.com"
-url: "http://hassanazimi.com"
+baseurl: ""
+url: ""
+#baseurl: "http://hassanazimi.com"
+#url: "http://hassanazimi.com"
 tagline: Software Engineer | Web Developer
+email: info@hassanazimi.com
+twitter_username: AmirHassanAzimi
+github_username:  hassanazimi
 
 # Build settings
+encoding: "utf-8"
 markdown: kramdown
 kramdown:
     auto_ids: false
@@ -15,3 +19,25 @@ gems: [jekyll-paginate]
 paginate: 4
 paginate_path: 'blog/page:num/'
 permalink: blog/:title
+include: [".htaccess"]
+
+# date            - reformat a date
+# capitalize      - capitalize words
+# downcase        - convert a string to lowercase
+# upcase          - convert a string to uppercase
+# first           - get the first element of an array
+# last            - get the last element of an array
+# join            - join elements of an array with specific character between them
+# sort            - sort elements of an array
+# size            - return the size of an array or string
+# strip_html      - strip html from string
+# strip_newlines  - strip all newlines from string
+# replace         - replace each occurrence
+# replace_first   - replace the first occurrence
+# remove          - remove each occurrence
+# remove_first
+# truncate        - truncate a string down to x characters.
+# truncatewords   - truncate a string down to x words
+# prepend         - prepend a string
+# append          - append a string
+# slice           - slice a string. Takes an offset and length.
