@@ -491,7 +491,6 @@ dd {
 }
 
 .tag-cloud {
-
 }
 
 .tag-cloud li {
@@ -510,7 +509,7 @@ dd {
 }
 
 .tag-cloud a:hover {
-	color: #FFF000;
+	color : #FFF000;
 }
 
 .return {
@@ -550,9 +549,9 @@ aside p {
 }
 
 aside ul {
-	list-style  : none;
-	padding     : 0;
-	margin      : 0;
+	list-style : none;
+	padding    : 0;
+	margin     : 0;
 }
 
 aside li {
@@ -795,4 +794,9 @@ aside li {
 	.legal {
 		text-align : center;
 	}
+}
+
+.center {
+	text-align : center !important;
+	margin     : auto;
 }

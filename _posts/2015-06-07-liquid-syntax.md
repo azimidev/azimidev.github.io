@@ -19,7 +19,7 @@ Output writes content to the page. Output tags start with two curly braces, cont
 {% highlight liquid %}
 Written by {{"{{author"}}}}
 Written by {{"{{page.author"}}}}
-Written by {{"{{'james'"}}}}
+Written by {{"{{'amir'"}}}}
 {% endhighlight %}
 
 In this instance the value of `author` would be evaluated and written to the page, the `page` object would be parsed to find the value of the `author` property and that would be written to the page, and then the literal string “james” would be written to the page.
