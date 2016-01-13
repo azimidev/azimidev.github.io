@@ -1,18 +1,14 @@
 
-<!--Create a sorted array of tags-->
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign sortedTags = site_tags | split:',' | sort %}
 <aside>
-	<h3>Archives</h3>
+	<h3>Posts</h3>
 	<ul class="archives">
-		<li><a href="{{site.baseurl}}/tags/">All posts</a></li>
-		{% for tag in sortedTags %}
-		<li><a href="{{site.baseurl}}/tags/#{{ tag | cgi_escape }}">{{ tag }} ({{ site.tags[tag].size }})</a></li>
-		{% endfor %}
+		{% for post in site.posts %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a> <small>[{{ post.date | date: "%B %e, %Y" }}]</small></li>
+		 {% endfor %}
 	</ul>
 	<h3>RSS</h3>
 	<p><a href="{{site.baseurl}}/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
-	<h3>Connect with us</h3>
+	<h3>Connect</h3>
 	<ul class="social">
 		<li><a href="//www.github.com/hassanazimi" title="Github" class="github"><i class="fa fa-github-square fa-3x"></i></a></li>
 		<li><a href="//www.facebook.com/amirhazz" title="facebook" class="fb"><i class="fa fa-facebook-square fa-3x"></i></a></li>
