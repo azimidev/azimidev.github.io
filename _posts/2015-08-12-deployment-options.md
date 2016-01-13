@@ -1,32 +1,79 @@
 ---
 layout: post
-title:  "Deployment Options"
+title:  "Extreme Programming"
 date:   2015-08-01
-tags:  [jekyll, deployment, github pages, git]
+tags:  [XP, Programming, Methodology]
 ---
-Once you’ve finished building your Jekyll site you’ll need to decide where and how you want to deploy it. Since Jekyll builds static content you can serve it almost anywhere. There are no server-side dependencies, CMS installations, database administrators, or server stacks to worry about. If the server can handle HTML, CSS, and JavaScript, it can serve your site. With that in mind let’s take a look at some of the most common options for deploying Jekyll sites.
+Extreme Programming (XP) is a software engineering process, which uses Agile Software Development Methodology and was first introduced by Kent Beck in 1996. With traditional software development methodologies which most of them are linear, one of the problems most software development methodologies had was not being cost effective for companies because the requirements always was changing and modifying those new requirements could cost a lot and that was the period when Extreme Programming was introduced. Extreme Programming is beneficial when requirements change frequently, which introduces barriers where new requirements can be altered. This process also has its own benefits and drawbacks. Some of the points of using Extreme Programing are as follows and they may be considered advantage or disadvantage depending on individual software engineers and individual clients:
 
-###FTP/SFTP
+* Organized programming
+* Less mistakes
+* Programmer and client satisfaction
+* Customer has control
+* Test iterations
+* New technologies
+* Methodology rules
+* Engineer designs the software product
+* Client initials requirements
+* Administrator has development rules
 
-Almost all hosting companies allow you to upload content via FTP or SFTP. Simply use a FTP client (such as [Filezilla](https://filezilla-project.org/ "Filezilla")) to upload the contents of your **_site** directory to the **www** or **public_html** directory of your hosting server. One downside to this method is the manual nature of updating your site. When files change you’ll need to manually overwrite your remote files. For larger sites this can be time-consuming and prone to errors. 
+Refactoring and Test Driven Development (TDD) are used with extreme programing. The refactoring is the different way and methods of doing objects in programming. One of the principal of using Extreme Programming is not to be intimidated about refactoring because there is always a time when there is another task and that may change everything in the past and use unit testing after it. After the process of refactoring it is necessary to run all tests against the code to see everything is working, as they should be. Programming in pairs and code reviews are two aspects involved with XP and user stories and communications are the cores of planning in XP. Plans have to be pre written and scheduled before they invalidate. The feedbacks from client, pair programming and other collaborators will help software developers to develop the software better.
 
-One option for enhancing FTP deployment is to use a Git-integrated FTP client like [git-ftp](https://github.com/git-ftp/git-ftp "git-ftp"). This allows you to bring version control into your deployment workflow and only upload the files that have changed.
+## XP’s Life Cycle Stages
 
-###Git
+### Planning
+This is the first phase of Extreme Programming life cycle, which involves user stories along with iterations. Development team will create the Iterations later. The user stories are collected from the client requirements by development team. The iterations provide some structures and operations requires. The developers will work on iterations once after the development team concocts the scheme, time, and money of functioning the iterations.
 
-Speaking of Git, if you’re using it to source-control your site, you can set it up to push to your web server when it’s time for deployment. To do this you’ll need to set up a post-update hook on your remote server. You’ll also, of course, need Git installed on your server and SSH access. This method of deployment is a little more technical than others, so you’ll need to be comfortable with Git, the command line interface, and writing basic scripts. [Nicolas Gallagher wrote one of the best posts](http://nicolasgallagher.com/simple-git-deployment-strategy-for-static-sites/ "Git for static sites") on the subject that I’ve seen, though a quick Google search will return several articles detailing versions of this workflow.
+### Designing
+After the plan is ready with its iterations, the designing process will come into affect. Now when it comes to design, it does not mean that complex design rather than simplicity. The core goal is continuously search for system implementation that is as simple as possible and simple does not mean that system does not meet its requirements but should be trusted.
 
-###Deployment Web Services
+### Coding
+Coding is the most vital phase of all life cycle stages because with XP it has priority over all other tasks. Format and style of coding must be the unchanged so as to enable compatibility among the team. This format and style results in faster and wider teamwork. This phase includes pair programming, metaphor, regular integration and firm observance such as 40-hour workweeks with no overtimes, code review and refactoring.
 
-Several online services offer deployment workflows for apps and sites. Most offer tiers of services that range from free to monthly fees based on the size and number of sites you’ll be updating. While many of their services aren’t really necessary for smaller static sites, the convenience of having your deployment automated with a single click is pretty nice, and the extra features can come in handy as your site grows. Check out [Beanstalk](http://beanstalkapp.com/ "Beanstalk"), [DeployBot](http://deploybot.com/ "Deploybot"), [Netlify](https://www.netlify.com/ "Netlify") and [Travis CI](https://travis-ci.org/ "Travis CI") for a good idea of how these services work and if they’re right for you.
+### Testing
+In Extreme Programming, testing is always comes with coding and development stage rather than after the completion. Occasionally, there are developers and teams where they write the tests first and write the codes later because that will give them some idea of what their codes need to do. They are also called Unit Tests and the purpose of doing them is to remove bugs before the delivery. Alternatively, there is approval test run at the end of the coding to deliver the client with approval results.
 
-###Github
+### Listening
+In every phrase in this cycle listening to the client is very important to see what they expect the system to do because with listening to the clients, developers ensure they understand these requirements. Also developers can provide clients with feedback about the technical aspects if they understand the requirements well enough. All feedbacks captured will be revised the requirements by development team and that will become a foundation of new design. After this phase the cycle will be repeated over again.
 
-Github uses Jekyll to power it’s Github Pages feature, so it’s only natural that deploying Jekyll sites through Github is quick and easy. You can even host your personal or project site for free on Github. You have two options for serving your site: user/organization or as a project page. Each Github user gets one free user/organization Github Pages site, and unlimited project pages. Organization pages are served as the “home” site for the user, so it’s served at `username.github.io.` Project pages are served as subdomains, so they would be served at `username.github.io/project-name.` The only real difference between the two methods is how you format relative links, as project pages have the project name directory as part of their base URL. You can even redirect a custom domain to your Github Pages site, which makes it a very attractive choice for hosting personal blogs and smaller sites.
+### Importance of capturing the ‘story’
+Assume there is a software engineer with a client asking to make software for his or her requirements. Depending on how long or short the process of creating that software is, engineer do not want client dissatisfaction soon after the project is finished, especially when the project was reasonably big and software engineers put so much effort for it.
 
-The workflow for deploying to Github Pages is simple. Login to your Github account, create a new repo, and then point your local repo to use the new Github repo as its remote. Create a new branch called `gh-pages` and push everything except the **_site** directory to your new Github repo. Github will detect the Jekyll site, build it, and serve the site at the appropriate URL. From there, updating the site is as simple as writing a new Markdown file and making a push. 
+Before the discovery of user stories, the most common way to capture client requirements was through the specifications, which took a snapshot at one point in time. Software inconspicuousness prevents most clients from realistically intellectualizing the system in their minds. Similar if they could, communication mistakes would undoubtedly keep software engineers from being able to create it from their directions and that is when importance of user stories comes into affect.
 
-###More information
+The user stories are the itinerary for every software engineer journey. They are guileless explanation of a single aspect of almost every system. The purpose of the user stories is the minimum amount of information, which is called a step necessary to allow the client to describe a path within the system. To productively produce applications that will satisfy the client needs, software engineers must have an connoisseur understanding of their customers’ requirements in every user stories and it is vital to capture the whole story thoroughly from clients for every and each step.
 
-For more information on deploying Jekyll sites (and more options), check out the section on [deployment methods](http://jekyllrb.com/docs/deployment-methods/ "deployment methods") in Jekyll’s documentation. 
+### Introduction to four basic XP activities, other XP practices, and phases
+As it was mentioned before XP has some core values such as communication, simplicity, feedback and courage. There are practices for XP such as below. However practices are divided into four sections. In some of its planning stages has phase related to them:
 
+* Fine-scale Feedback
+	* The Planning Game
+		* Release Planning
+			* Exploration Phase
+			* Commitment Phase
+				* Sorted by Value
+				* Sorted By Risk
+			* Steering Phase (One-site Client)
+		* Pair Programming
+		* Testing
+		* Refactoring
+* Continuous Process
+	* Small Releases
+	* Design Improvement
+	* Continuous Integration
+* Shared Understanding
+	* Coding Standard
+	* Collective Ownership
+	* Simple Design
+	* Metaphor
+* Programming Welfare
+	* Called Sustainable Pace
+
+[Click here to download XP’s Concepts in (PDF)](https://ep.kingston.ac.uk/k1221692/files/2014/10/XP%E2%80%99s-Concepts-PDF.pdf "Extreme Programming")
+
+Activities in XP are part of XP’s life cycle. In the planning game practice there are planning involves for every iteration and user stories are provided by clients and that cause time reduction and client satisfaction. On the other hand, sometimes planning is not necessary and client is not always available. In small releases phase because there are less functionality involves, consequently, releases happen regularly. The metaphor is the verbal design of the system and usual set of terminology, which is the fast and easy way of describing the scheme. With simple design, time is never wasted and it is simpler to grasp everything, which refactoring and cooperative possession is made possible. Refactoring is assuring the high quality of the system in some cases, changing the way in which something is done in the system. Test Driven Development (TDD) is simply Unit Testing, which designs the system with test first. The reason for testing first is to give programmer some idea and goals. The benefit of pair programming is focus and concentration as two people can answer any questions better than only one people. As it was mentioned earlier about refactoring, there is a practice called collective ownership, which allows refactoring and is the idea of code ownership for developers. XP introduces another practice called continuous integration and with that, new qualities and alterations are worked into the system. Continuous integration enables small releases and lowers to extensive process. There is 40-hour workweek that some developer use in related to XP, which simply indicates the working hours in a week. They use practice to restrict the working hours to 40 because most developers will not be effective after 40 hours a week. It is worth to mention that with on-site customers, which helps to give feedbacks to the development team, can give firm and decent responses to the development enquiries. Finally, with coding standards also known as code review, all code should look similar and this will cut the total time, which developers employ remake and reformatting it.
+
+There are also release-planning phases in XP. The stage which client provides developers with high-level requirements for the system called Exploration Phase whereas in Commitment Phase, date of the next release will be committed. Adjusting the plan and adding the new requirements or removing the existing requirements is discussed in Steering Phase.
+
+### Conclusion
+There is not any best methodology when it comes to software development methodology. Extreme Programming is self-control software development based on principles of courage, feedback, communication and the most important one, simplicity. Software progress is a continuously evolving discipline. XP is popular because of its discipline between all other agile software development methodologies. Lightness can be felt with XP and constantly using the feedbacks. As programmers write and rewrite the code in XP projects, the client sees growth in the system and because the details of the requirements matter a lot and also because with XP developers can capture details more often, consequently the only object will remain is the coding.
