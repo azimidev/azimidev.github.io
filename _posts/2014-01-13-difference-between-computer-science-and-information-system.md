@@ -52,7 +52,7 @@ It can be seen then that differences do exist between Computer Science (CS) and 
 Allen Newell, A. J. (n.d.). What is Computer Science? . Retrieved 12 2012, 06, from Science 1967 (157) 1373-4 : http://akira.ruc.dk/~jv/cs.html
 http://www.business.auckland.ac.nz/uoa/home/about/od-our-departments/od-informationsystems-operationsmanagement/why-study-information-systems-2
 Wikipedia. (2012, 12 05). Computer Science. Retrieved 12 06, 2012, from Wikipedia: http://en.wikipedia.org/wiki/Computer_science
-Wikipedia. (2012, 11 24). Inforamtion System. Retrieved 12 06, 2012, from Wikipedia: http://en.wikipedia.org/wiki/Information_system
+Wikipedia. (2012, 11 24). Information System. Retrieved 12 06, 2012, from Wikipedia: http://en.wikipedia.org/wiki/Information_system
 </small>
 
 ## Reference
