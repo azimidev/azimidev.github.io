@@ -3,7 +3,7 @@ layout: page
 title: About this blog
 ---
 
-This blog is created to share some of my thoughts about new technologies and web developments. Hello My name is Amir Hassan Azimi and I'm a software engineer and a web developer. I mainly work with PHP, Rails and Ruby applications but I look forward to any new technology about web applications and it doesn't matter if it is going to be JavaScript or Angular or any other web technology.
+This blog is created to share some of my thoughts about new technologies and web developments. Hello My name is Hassan Azimi and I'm a software engineer and a web developer. I mainly work with PHP, Rails and Ruby applications but I look forward to any new technology about web applications and it doesn't matter if it is going to be JavaScript or Angular or any other web technology.
 
 I own a website called [Parsclick](http://www.parsclick.net "parsclick"){: target="_blank"} which we teach people about the most useful programming languages.
 
@@ -26,7 +26,7 @@ People always ask me:
 
 > Why are you doing this for free? How do you earn money from it? Why don't you ask for money?
  
-Well, money comes and goes isn't it? My parents taught me to always help people and give something back. That's why I always do that and I don't expect anything in return. The other reason is when I make tutorials I always repeat myself an that helps me learn as well and get better.  
+Well, money comes and goes isn't it? My parents taught me to always help people and give something back. That's why I always do that and I don't expect anything in return. The other reason is when I make tutorials I always repeat myself and that helps me learn as well and get better.  
 Of course, money is needed in order to survive but it isn't everything. I hope you understand. 
 
 That's it about me if you would like to know more about my work, skills, job enquiries and more, please head over to my [LinkedIn](https://www.linkedin.com/in/hass0azimi "Hassan Azimi LinkedIn"){: target="_blank"} account.
