@@ -315,6 +315,7 @@ and (max-width : 768px) {
 	display     : block;
 	opacity     : 1;
 	font-size   : .8em;
+	line-height : 100%;
 }
 
 #testimonials .quote:hover .customer {
