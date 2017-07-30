@@ -241,101 +241,6 @@ and (max-width : 768px) {
 	width : 100%;
 }
 
-/**  Page -- Testimonials **/
-
-#testimonials {
-	padding : 0;
-}
-
-#testimonials h2 {
-	display : none;
-}
-
-#testimonials blockquote {
-	margin      : 0;
-	padding     : 0;
-	border-left : none;
-	min-height  : 500px;
-	position    : relative;
-}
-
-#testimonials blockquote .quote {
-	background-color : rgba(255, 255, 255, .6);
-	padding          : 20px 5%;
-	position         : absolute;
-	bottom           : 0;
-	width            : 75%;
-	font-weight      : 400;
-	border-radius    : 0 50px 0 0;
-}
-
-#testimonials blockquote .quote:hover {
-	background-color : rgba(239, 240, 196, .9);
-}
-
-#testimonials #janeh {
-	background      : url(../images/testimonial-1.jpg) no-repeat center center;
-	background-size : cover;
-}
-
-#testimonials #johnb {
-	background      : url(../images/testimonial-2.jpg) no-repeat center center;
-	background-size : cover;
-}
-
-#testimonials #mcphersons {
-	background      : url(../images/testimonial-3.jpg) no-repeat center center;
-	background-size : cover;
-}
-
-#testimonials #lorraines {
-	background      : url(../images/testimonial-4.jpg) no-repeat center center;
-	background-size : cover;
-}
-
-#testimonials .quote {
-	font-weight : 400;
-}
-
-#testimonials .quote .more, #testimonials .customer {
-	opacity            : 0;
-	font-size          : 0;
-	line-height        : 0;
-	padding-top        : 10px;
-	-webkit-transition : all .5s ease;
-	-moz-transition    : all .5s ease;
-	-ms-transition     : all .5s ease;
-	-o-transition      : all .5s ease;
-	transition         : all .5s ease;
-}
-
-#testimonials .quote:hover .more {
-	font-family : 'Fira Mono', monospace, sans-serif;
-	font-weight : 100;
-	display     : block;
-	opacity     : 1;
-	font-size   : .8em;
-	line-height : 100%;
-}
-
-#testimonials .quote:hover .customer {
-	font-family : "Open Sans", sans-serif;
-	font-weight : 100;
-	display     : block;
-	opacity     : 1;
-	font-size   : .7em;
-	line-height : 100%;
-	text-align  : right;
-}
-
-#testimonials .quote .intro::after {
-	content : '...';
-}
-
-#testimonials .quote:hover .intro::after {
-	content : '';
-}
-
 /**  Contact **/
 
 #contact {
@@ -415,7 +320,3 @@ footer .navbar-nav > li a {
 #scrollup {
 	cursor : pointer;
 }
-
-
-
-
