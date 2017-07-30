@@ -298,7 +298,6 @@ and (max-width : 768px) {
 }
 
 #testimonials .quote {
-	font-size   : 1.2em;
 	font-weight : 400;
 }
 
@@ -315,7 +314,7 @@ and (max-width : 768px) {
 }
 
 #testimonials .quote:hover .more {
-	font-family : "Open Sans", sans-serif;
+	font-family : 'Fira Mono', monospace, sans-serif;
 	font-weight : 100;
 	display     : block;
 	opacity     : 1;
