@@ -3,8 +3,6 @@
 /**  Basic Page CSS **/
 body {
 	font-family : 'Fira Mono', monospace, sans-serif;
-	font-weight : 300;
-	font-size   : 2em;
 	position    : relative;
 }
 
