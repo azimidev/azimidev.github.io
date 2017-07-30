@@ -237,10 +237,6 @@ and (max-width : 768px) {
 	color           : #6F4E36;
 }
 
-.doctor p {
-	font-size : .8em;
-}
-
 .doctor img {
 	width : 100%;
 }
