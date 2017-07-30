@@ -627,8 +627,7 @@ aside li {
 		font-size      : 1.2em;
 		font-weight    : 100;
 		text-transform : uppercase;
-		margin         : 0;
-		margin-bottom  : 0.2em;
+		margin         : 0 0 0.2em;
 		padding        : .5em 0;
 		display        : block;
 		max-width      : 5em;
@@ -681,9 +680,8 @@ aside li {
 	}
 
 	dd {
-		padding       : 0;
-		margin        : 0;
-		margin-bottom : 1em;
+		padding : 0;
+		margin  : 0 0 1em;
 	}
 }
 

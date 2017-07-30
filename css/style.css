@@ -1,15 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Roboto+Slab:400,100,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Fira+Mono);
 
 /**  Basic Page CSS **/
 body {
-	font-family : "Roboto Slab", sans-serif;
+	font-family : 'Fira Mono', monospace, sans-serif;
 	font-weight : 300;
 	font-size   : 2em;
 	position    : relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family : "Open Sans", sans-serif;
+	font-family : 'Open Sans', sans-serif;
 	font-weight : 100;
 	margin      : 0;
 }
@@ -53,9 +53,8 @@ header .navbar-default .navbar-nav .active a:hover {
 
 header .navbar-brand {
 	/*background: url(../images/parsclick.svg);*/
-	background-repeat   : no-repeat;
-	background-position : 15px 0;
-	height              : auto;
+	background : no-repeat 15px 0;
+	height     : auto;
 }
 
 header .navbar-brand h1 {
@@ -157,11 +156,10 @@ header .inbody .navbar-brand span.subhead {
 }
 
 #featured .item {
-	background-size     : cover;
-	background-repeat   : no-repeat;
-	background-position : center center;
-	width               : 100%;
-	height              : 100%;
+	background-size : cover;
+	background      : no-repeat center center;
+	width           : 100%;
+	height          : 100%;
 }
 
 /**  Page **/
@@ -176,9 +174,8 @@ header .inbody .navbar-brand span.subhead {
 
 /**  Page -- Mission **/
 #bio {
-	background-color : #E4D29D;
-	background-image : linear-gradient(to bottom, #E4BE44, #FF784B);
-	border-top       : 20px solid rgba(0, 230, 170, .5);
+	background : #E4D29D linear-gradient(to bottom, #E4BE44, #FF784B);
+	border-top : 20px solid rgba(0, 230, 170, .5);
 }
 
 /**  Page -- Services **/
@@ -191,8 +188,7 @@ header .inbody .navbar-brand span.subhead {
 #services img.icon {
 	display            : block;
 	width              : 80px;
-	margin             : 0 auto;
-	margin-bottom      : 5px;
+	margin             : 0 auto 5px;
 	-webkit-transition : all .5s ease;
 	-moz-transition    : all .5s ease;
 	-ms-transition     : all .5s ease;
@@ -224,8 +220,7 @@ and (max-width : 768px) {
 /**  Page -- portfolio **/
 
 #portfolio {
-	background-color : #78FFD7;
-	background-image : linear-gradient(to bottom, #78FFD7, #2DC8D7);
+	background : #78FFD7 linear-gradient(to bottom, #78FFD7, #2DC8D7);
 }
 
 .doctor {
@@ -352,8 +347,7 @@ and (max-width : 768px) {
 /**  Contact **/
 
 #contact {
-	background-color : #88FFA8;
-	background-image : linear-gradient(to bottom, #88FFA8, #4BB482);
+	background : #88FFA8 linear-gradient(to bottom, #88FFA8, #4BB482);
 }
 
 #contact textarea {
