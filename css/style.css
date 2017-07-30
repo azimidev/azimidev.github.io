@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans|Fira+Mono);
+@import url(http://fonts.googleapis.com/css?family=Fira+Mono);
 
 /**  Basic Page CSS **/
 body {
@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family : 'Open Sans', sans-serif;
+	font-family : 'Fira Mono', monospace, sans-serif;
 	font-weight : 100;
 	margin      : 0;
 }
@@ -299,7 +299,6 @@ and (max-width : 768px) {
 
 #testimonials .quote {
 	font-size   : 1.2em;
-	line-height : 110%;
 	font-weight : 400;
 }
 
