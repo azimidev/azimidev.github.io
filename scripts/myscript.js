@@ -38,6 +38,24 @@ $(function() {
 		return false;
 	});
 
+	var coded = "lXnA@qz77zXzmlCl.jAC";
+	var key   = "PxDlMAf7vUcugGYdVEpmNZOQKwnbhrj314Sk6LJCIa0eTiXoqsFHR9B8t25yWz";
+	var shift = coded.length;
+	var link  = '';
+
+	for (var i = 0; i < coded.length; i++) {
+		if (key.indexOf(coded.charAt(i)) === -1) {
+			var ltr = coded.charAt(i);
+			link += (ltr);
+		}
+		else {
+			ltr = (key.indexOf(coded.charAt(i)) - shift + key.length) % key.length;
+			link += (key.charAt(ltr));
+		}
+	}
+
+	$('#email').attr('href', 'mailto:' + link);
+
 	$('#current-year').html(new Date().getFullYear().toString());
 });
 

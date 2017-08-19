@@ -220,26 +220,7 @@
 				<p class="f4 f3-ns underline b avenir mt4-l" id="contact">Reach Out</p>
 				<p class="f6 pl5-l measure-wide">And touch base 🎶</p>
 				<p class="f6 pl5-l measure-wide">I like meeting new people</p>
-				<script>
-					{
-						coded = "lXnA@qz77zXzmlCl.jAC";
-						key   = "PxDlMAf7vUcugGYdVEpmNZOQKwnbhrj314Sk6LJCIa0eTiXoqsFHR9B8t25yWz";
-						shift = coded.length;
-						link  = '';
-						for (i = 0; i < coded.length; i++) {
-							if (key.indexOf(coded.charAt(i)) === -1) {
-								ltr = coded.charAt(i);
-								link += (ltr);
-							}
-							else {
-								ltr = (key.indexOf(coded.charAt(i)) - shift + key.length) % key.length;
-								link += (key.charAt(ltr));
-							}
-						}
-						document.write('<a class="link avenir b f2 bg-black white hover-bg-gold hover-black ph2" href="mailto:' + link + '">EMAIL ME</a>');
-					}
-				</script>
-
+				<a class="link avenir b f2 bg-black white hover-bg-gold hover-black ph2" id="email" href="">EMAIL ME</a>
 				<div class="fr w3">
 					<a class="f1 link pointer" id="scrollup">
 						<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 877.71 877.71"
