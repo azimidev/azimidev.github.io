@@ -2,20 +2,25 @@ $(function() {
 
 	'use strict';
 
-	var topoffset = 50; //variable for menu height
-
-	//Use smooth scrolling when clicking on navigation
-	$('.navbar a[href*=#]:not([href=#])').click(function() {
-		if (location.pathname.replace(/^\//, '') ===
-			this.pathname.replace(/^\//, '') &&
-			location.hostname === this.hostname) {
+	// Select all links with hashes
+	$('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target     = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
-				$('html,body').animate({
-					scrollTop : target.offset().top - topoffset + 2,
-				}, 500);
-				return false;
+				event.preventDefault();
+				$('html, body').animate({
+					scrollTop : target.offset().top,
+				}, 1000, function() {
+					var $target = $(target);
+					$target.focus();
+					if ($target.is(":focus")) {
+						return false;
+					} else {
+						$target.attr('tabindex', '-1');
+						$target.focus();
+					}
+				});
 			}
 		}
 	});
