@@ -311,9 +311,15 @@
 		<p class="f4 f3-ns underline b avenir mt4-l" id="contact">Reach Out</p>
 		<p class="f6 pl5-l measure-wide">And touch base 🎶</p>
 		<p class="f6 pl5-l measure-wide">I like meeting new people</p>
-		<a class="link avenir b f2 bg-black white hover-bg-gold hover-black ph2" id="email" href="">
-			EMAIL ME
-		</a>
+		<a
+			class="cryptedmail link avenir b f2 bg-black white hover-bg-gold hover-black ph2"
+			id="email"
+			href="#"
+			data-name="info"
+			data-domain="azimi"
+			data-tld="dev"
+			onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
+		>EMAIL ME</a>
 		<div class="fr w3">
 			<a class="f1 link pointer" id="scrollup">
 				<svg

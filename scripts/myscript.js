@@ -37,8 +37,6 @@ $(function() {
 		return false;
 	});
 
-	$('#email').attr('href', 'mailto:' + 'info@azimi.dev');
-
 	$('#current-year').html(new Date().getFullYear().toString());
 });
 
