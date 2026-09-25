@@ -1,0 +1,20 @@
+/* The DevTools pane (Styles + Console) shared by /v1/ and /v2/.
+   Plain CSS on purpose: it has to look the same whichever Tailwind theme the page runs. */
+
+/* Styles */
+.rule { display: flex; align-items: baseline; gap: .5rem; padding-left: 1rem; cursor: pointer; }
+.rule input { accent-color: #000; width: .8rem; height: .8rem; translate: 0 .1em; cursor: pointer; }
+.rule .prop { color: #c41a16; }
+.rule .val { color: #1a1aa6; }
+.rule:has(input:not(:checked)) .decl { text-decoration: line-through; opacity: .55; }
+.swatch { display: inline-block; width: .7rem; height: .7rem; margin-right: .3rem; border: 1px solid rgb(0 0 0 / .3); vertical-align: -.05em; }
+
+/* Console */
+.line { padding: .3rem .75rem; border-bottom: 1px solid rgb(0 0 0 / .07); white-space: pre-wrap; overflow-wrap: anywhere; }
+.line.in { color: #000; }
+.line.in::before { content: "› "; color: #357edd; font-weight: 700; }
+.line.ret { color: #1a1aa6; }
+.line.ret::before { content: "← "; color: rgb(0 0 0 / .35); }
+.line.info { color: #6b6b6b; }
+.line.err { color: #c41a16; background: #fff0f0; border-bottom-color: #ffd6d6; }
+.line.err::before { content: "✕ "; font-weight: 700; }

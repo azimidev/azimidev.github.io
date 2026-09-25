@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-GB" id="top">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eric Azimi · Tech Lead, Software Architect &amp; Full-Stack Engineer · London</title>
+	<meta
+		name="description"
+		content="Eric Azimi is a London-based Tech Lead, Software Architect and Full-Stack Engineer building with PHP, Laravel, Ruby on Rails, JavaScript, Vue and React."
+	/>
+	<meta name="author" content="Eric Azimi">
+	<!--Version page: switch.sh turns this into an indexable homepage copy-->
+	<meta name="robots" content="noindex, follow">
+	<meta name="theme-color" content="#ffb700">
+	<link rel="canonical" href="https://azimi.dev/">
+	<meta property="og:type" content="profile" />
+	<meta property="og:site_name" content="azimi.dev" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:url" content="https://azimi.dev/" />
+	<meta property="og:title" content="Eric Azimi · Tech Lead, Software Architect &amp; Full-Stack Engineer" />
+	<meta property="og:description" content="London-based Tech Lead, Software Architect and Full-Stack Engineer. PHP, Laravel, Ruby on Rails, JavaScript, Vue, React and more." />
+	<meta property="og:image" content="https://azimi.dev/public/og-image.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@azimidev" />
+	<meta name="twitter:image" content="https://azimi.dev/public/og-image.jpg" />
+	<link rel="icon" href="/public/favicon.ico" sizes="48x48">
+	<link rel="icon" type="image/png" href="/public/favicon-32x32.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+	<link rel="manifest" href="/public/site.webmanifest">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
+	<link rel="stylesheet" href="/css/devtools.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3"></script>
+	<style type="text/tailwindcss">
+		@theme {
+			--color-gold: #ffb700;
+			--color-yellow: #ffd700;
+			--color-orange: #ff6300;
+			--color-red: #ff4136;
+			--color-light-red: #ff725c;
+			--color-pink: #ff80cc;
+			--color-purple: #a463f2;
+			--color-blue: #357edd;
+			--color-green: #19a974;
+			--color-gray: #6b6b6b;
+			--color-silver: #aaa;
+
+			--font-helvetica: 'helvetica neue', helvetica, arial, sans-serif;
+			--font-fira: 'Fira Mono', ui-monospace, monospace;
+		}
+
+		@layer base {
+			/* one left edge for the whole page: header, nav and prose all hang off it */
+			:root { --axis: clamp(1.25rem, 11vw, 13rem); scroll-behavior: smooth; }
+			body { @apply bg-white text-black font-fira; }
+			::selection { @apply bg-gold text-black; }
+			:focus-visible { outline: 3px solid black; outline-offset: 3px; }
+			@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
+		}
+
+		/* The CSS IS AWESOME mug, but it's a CV.
+		   Only "Tech Lead" is allowed to size the box: the other lines are width:0 + nowrap,
+		   so they add nothing to its width and spill straight out of it. */
+		.the-box {
+			clip-path: inset(-.15em -200vw -.15em -.15em);
+			transition: clip-path .6s cubic-bezier(.7, 0, .2, 1);
+			animation: escape .9s .5s cubic-bezier(.7, 0, .2, 1) backwards;
+		}
+		.the-box[data-boxed] { clip-path: inset(0); }
+		.spill { width: 0; white-space: nowrap; }
+		@keyframes escape { from { clip-path: inset(0); } }
+		@media (prefers-reduced-motion: reduce) {
+			.the-box { animation: none; transition: none; }
+		}
+
+		/* Same white outline as the photo sticker, so the words stay readable when they cross his face */
+		.sticker { paint-order: stroke fill; -webkit-text-stroke: .1em #fff; }
+
+		/* Bullets are CSS selector tokens. Hover an item and its bullet admits what it is. */
+		.selectors > li { position: relative; }
+		.selectors > li::before {
+			content: var(--b);
+			content: var(--b) / "";
+			position: absolute; right: calc(100% + .7em); top: 0;
+			color: var(--color-purple); font-weight: 700; white-space: nowrap;
+		}
+		.selectors > li:hover::before { content: ":hover"; content: ":hover" / ""; color: var(--color-red); font-size: .75em; line-height: 2.25; }
+		.selectors > li:nth-child(10n+1) { --b: "*"; }
+		.selectors > li:nth-child(10n+2) { --b: ">"; }
+		.selectors > li:nth-child(10n+3) { --b: "+"; }
+		.selectors > li:nth-child(10n+4) { --b: "~"; }
+		.selectors > li:nth-child(10n+5) { --b: "#"; }
+		.selectors > li:nth-child(10n+6) { --b: "."; }
+		.selectors > li:nth-child(10n+7) { --b: "::"; }
+		.selectors > li:nth-child(10n+8) { --b: "@"; }
+		.selectors > li:nth-child(10n+9) { --b: "&"; }
+		.selectors > li:nth-child(10n+10) { --b: "{}"; }
+
+		/* what unticking each rule does to the page */
+		.off-spellcheck .spellcheck { text-decoration: none; }
+		.off-websites .websites { border-bottom-width: 0; }
+		.off-bullets .selectors > li::before { content: none; }
+		.off-hover .selectors > li:hover::before { content: var(--b) / ""; color: var(--color-purple); font-size: 1em; line-height: inherit; }
+		.off-italic .about-copy { font-style: normal; }
+		.off-gold .about-copy p { border-left-width: 0; }
+		.off-borders .work a, .off-borders .work span { border-style: solid; }
+		.off-secret .who { color: rgb(255 255 255 / .85); }
+		.off-secret-bg .who { background: transparent; }
+
+		/* SEOer isn't a word. The spellchecker agrees. It still ranks. */
+		.spellcheck { text-decoration: underline wavy var(--color-red); text-underline-offset: .25em; text-decoration-thickness: 1.5px; }
+	</style>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Eric Azimi",
+		"url": "https://azimi.dev/",
+		"image": "https://azimi.dev/public/eric-azimi.jpg",
+		"jobTitle": ["Tech Lead", "Software Architect", "Full-Stack Engineer"],
+		"address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+		"sameAs": [
+			"https://medium.com/@azimidev",
+			"https://twitter.com/azimidev",
+			"https://uk.linkedin.com/in/azimidev",
+			"https://github.com/azimidev",
+			"https://stackoverflow.com/users/2891689/azimi-dev",
+			"https://www.youtube.com/c/parsclicktv",
+			"https://www.instagram.com/azimi.dev/"
+		]
+	}
+	</script>
+</head>
+<body>
+<header class="bg-gold overflow-hidden relative [--photo:46vw] [--clear:32vw] sm:[--photo:44vw] sm:[--clear:44vw]">
+	<div class="relative z-10 pl-(--axis) pr-5 pt-14 sm:pt-20 pb-10">
+		<h1 class="font-helvetica font-bold tracking-tighter leading-[1.1] text-[clamp(2.6rem,7.5vw,6rem)]">
+			<span class="bg-black/90 text-white px-[.18em] hover:bg-blue transition-colors">Eric Azimi</span>
+			<span id="box" class="the-box sticker block w-fit mt-[.3em] border-[.07em] border-black px-[.12em] pb-[.04em] uppercase">
+				<span class="block w-fit hover:bg-green transition-colors">Tech Lead</span>
+				<span class="spill block hover:text-blue transition-colors">Software Architect</span>
+				<span class="spill block hover:text-red transition-colors">Full-Stack Engineer</span>
+			</span>
+		</h1>
+		<p class="mt-6 text-sm flex flex-wrap items-baseline gap-x-4 gap-y-2 max-w-[min(40rem,calc(100vw-var(--axis)-var(--clear)))]">
+			<span id="box-caption" class="text-black/70 whitespace-nowrap">/* thinks outside the box */</span>
+			<button
+				id="box-toggle" type="button" aria-controls="box" aria-pressed="false"
+				class="whitespace-nowrap cursor-pointer border-2 border-black px-2 py-0.5 hover:bg-black hover:text-gold transition-colors"
+			>Put him back in the box</button>
+		</p>
+
+		<nav class="mt-10 max-w-[min(40rem,calc(100vw-var(--axis)-var(--clear)))] border-y border-black py-3 flex flex-wrap justify-center gap-x-8 gap-y-1 text-base sm:text-xl">
+			<a href="#about" class="hover:bg-black hover:text-gold px-1 -mx-1">About</a>
+			<a href="#portfolio" class="hover:bg-black hover:text-gold px-1 -mx-1">Portfolio</a>
+			<a href="#contact" class="hover:bg-black hover:text-gold px-1 -mx-1">Contact</a>
+			<a href="https://medium.com/@azimidev/" target="_blank" rel="me noopener" class="hover:bg-black hover:text-gold px-1 -mx-1">Blog</a>
+		</nav>
+		<p class="mt-5 flex flex-wrap justify-center gap-4 sm:gap-5 max-w-[min(40rem,calc(100vw-var(--axis)-var(--clear)))]">
+				<a
+					title="Medium Blog" aria-label="Medium Blog" href="https://medium.com/@azimidev/"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M11.824 12.628l-.276.45.798.398 2.744 1.372c.15.076.294.11.418.11.278 0 .467-.177.467-.492V5.883l-4.15 6.745zm4.096-8.67c-.004-.003 0-.01-.003-.012l-4.825-2.412c-.06-.03-.123-.038-.187-.044-.016 0-.03-.01-.047-.01-.184 0-.368.092-.467.254l-.24.39-.5.814-1.89 3.08 1.89 3.076.5.813.5.812.59.95 4.71-7.64c.02-.03.01-.06-.02-.08zm-6.27 7.045L7.17 6.97l-.295-.477-.294-.477-.25-.416v4.867l3.32 1.663.5.25.5.25-.5-.813-.5-.813zM.737 1.68L.59 1.608c-.085-.042-.166-.062-.24-.062-.206 0-.35.16-.35.427v10.162c0 .272.2.594.442.716l4.145 2.08c.107.06.208.08.3.08.257 0 .438-.2.438-.53V4.01c0-.02-.012-.04-.03-.047L.738 1.68z"
+						/>
+					</svg>
+				</a>
+				<a
+					title="Twitter" aria-label="Twitter" href="https://twitter.com/azimidev"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.375-1.337.648-2.085.795-.598-.638-1.45-1.036-2.396-1.036-1.812 0-3.282 1.468-3.282 3.28 0 .258.03.51.085.75C5.152 5.39 2.733 4.084 1.114 2.1.83 2.583.67 3.147.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.416-.02-.617-.058.418 1.304 1.63 2.253 3.067 2.28-1.124.88-2.54 1.404-4.077 1.404-.265 0-.526-.015-.783-.045 1.453.93 3.178 1.474 5.032 1.474 6.038 0 9.34-5 9.34-9.338 0-.143-.004-.284-.01-.425.64-.463 1.198-1.04 1.638-1.7z"
+						/>
+					</svg>
+				</a>
+				<a
+					title="LinkedIn" aria-label="LinkedIn" href="https://uk.linkedin.com/in/azimidev"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z"
+						/>
+					</svg>
+				</a>
+				<a
+					title="GitHub" aria-label="GitHub" href="https://github.com/azimidev"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"
+						/>
+					</svg>
+				</a>
+				<a
+					title="Stack Overflow" aria-label="Stack Overflow" href="https://stackoverflow.com/users/2891689/azimi-dev?tab=profile"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M12.658 14.577v-4.27h1.423V16H1.23v-5.693H2.65v4.27h10.006zm-8.583-1.423h7.16V11.73h-7.16v1.424zm.173-3.235l6.987 1.465.3-1.38L4.55 8.54l-.302 1.38zm.906-3.365l6.47 3.02.602-1.295-6.47-3.02-.602 1.295zm1.81-3.19l5.478 4.57.906-1.078-5.477-4.57-.905 1.077zM10.502 0L9.338.863l4.27 5.735 1.164-.862L10.5 0z"
+						/>
+					</svg>
+				</a>
+				<a
+					title="YouTube" aria-label="YouTube" href="https://www.youtube.com/c/parsclicktv"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M0 7.345c0-1.294.16-2.59.16-2.59s.156-1.1.636-1.587c.608-.637 1.408-.617 1.764-.684C3.84 2.36 8 2.324 8 2.324s3.362.004 5.6.166c.314.038.996.04 1.604.678.48.486.636 1.588.636 1.588S16 6.05 16 7.346v1.258c0 1.296-.16 2.59-.16 2.59s-.156 1.102-.636 1.588c-.608.638-1.29.64-1.604.678-2.238.162-5.6.166-5.6.166s-4.16-.037-5.44-.16c-.356-.067-1.156-.047-1.764-.684-.48-.487-.636-1.587-.636-1.587S0 9.9 0 8.605v-1.26zm6.348 2.73V5.58l4.323 2.255-4.32 2.24h-.002z"
+						/>
+					</svg>
+				</a>
+				<a
+					title="Instagram" aria-label="Instagram" href="https://www.instagram.com/azimi.dev/"
+					class="block w-7 sm:w-9 text-black hover:text-white transition-colors" target="_blank" rel="me noopener"
+				>
+					<svg
+						aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd"
+						clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"
+					>
+						<path
+							d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.048 3.233c-.036.78-.166 1.203-.276 1.485-.145.374-.318.64-.598.92-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.038-1.097.047-3.233.047s-2.39-.01-3.233-.048c-.78-.036-1.203-.166-1.485-.276-.374-.145-.64-.318-.92-.598-.28-.28-.453-.546-.598-.92-.11-.282-.24-.705-.276-1.485C1.45 10.39 1.44 10.136 1.44 8s.01-2.39.048-3.233c.036-.78.166-1.203.276-1.485.145-.374.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276C5.61 1.45 5.864 1.44 8 1.44zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z"
+						/>
+					</svg>
+				</a>
+		</p>
+	</div>
+	<!--Photo sits under the text at every size; the escaped roles run across it wearing the same white sticker outline-->
+	<picture>
+		<source type="image/webp" srcset="/public/eric-azimi-480.webp 480w, /public/eric-azimi-800.webp 800w" sizes="(min-width: 40rem) 44vw, 46vw">
+		<img
+			src="/public/eric-azimi-480.png"
+			width="800" height="824" fetchpriority="high" alt="Eric Azimi, hand on chin, thinking"
+			class="absolute right-0 bottom-0 w-(--photo) max-w-[48rem] pointer-events-none select-none"
+		>
+	</picture>
+</header>
+
+<main class="pl-(--axis) pr-5 py-16 sm:py-20 leading-[1.7] xl:grid xl:grid-cols-[40rem_minmax(20rem,24rem)] xl:gap-x-[clamp(3rem,7vw,8rem)]">
+<div class="max-w-[40rem]">
+
+	<section aria-labelledby="what" data-styles="what">
+		<h2 id="what" class="font-helvetica font-black text-2xl sm:text-3xl tracking-tight underline decoration-4 underline-offset-8">What I do ?</h2>
+		<p class="mt-6">
+			<b>Make that thing of yours even better.</b><br>
+			I can help either with the big picture or with specifics.
+		</p>
+
+		<h3 class="mt-12 font-helvetica font-bold italic text-xl sm:text-2xl"><code class="text-silver not-italic font-fira">#!</code> The Full Shebang</h3>
+		<ul class="mt-4 list-disc pl-6 space-y-1.5 marker:text-gold">
+			<li>Build killer <span class="websites border-b-2 border-purple" title="check it out">websites</span> as a "full-stack" developer</li>
+			<li><span class="spellcheck" title="Not a word. Ranks anyway.">SEOer</span></li>
+			<li>Online <b class="uppercase tracking-widest">instructor</b></li>
+			<li>Leader</li>
+			<li>Tech Builder</li>
+		</ul>
+		<p class="mt-3 text-sm text-gray">Not sure what you need? I can help with that too.</p>
+	</section>
+
+	<section aria-labelledby="skills" data-styles="skills" class="mt-20">
+		<h2 id="skills" class="inline font-helvetica font-bold text-2xl sm:text-3xl tracking-tight bg-gold px-2 -mx-2 box-decoration-clone">Skills / Languages</h2>
+		<ul data-skills class="selectors mt-8 pl-10 space-y-2.5 text-[.95rem]">
+			<li><span class="text-red">&lt;?</span> php <span class="text-red">?&gt;</span> <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li><span class="text-red">{{</span> Laravel <span class="text-red">}}</span> <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li><span class="text-red">&gt;&gt;</span> <span class="text-purple">puts</span> 'Ruby' <small class="uppercase border px-1 text-[.65rem] align-middle">good</small></li>
+			<li><span class="text-red">&lt;%=</span> 'Ruby on Rails' <span class="text-red">%&gt;</span> <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li>JavaScript &amp; <span class="text-red">$(</span>jQuery<span class="text-red">)</span> <small class="uppercase border px-1 text-[.65rem] align-middle">good</small></li>
+			<li>Vue<span class="text-green">.js</span> <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li>React<span class="text-blue">.js</span> <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li>Angular<span class="text-red">.js</span> <small class="uppercase border px-1 text-[.65rem] align-middle">good</small></li>
+			<li><span class="text-orange">&lt;</span>HTML<span class="text-orange">&gt;</span> + <span class="text-purple">{</span>CSS<span class="text-purple">}</span> + <span class="text-purple">@</span>Less + <span class="text-purple">$</span>Sass <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li>Database &amp; SQL <small class="uppercase border px-1 text-[.65rem] align-middle">very good</small></li>
+			<li>Git &amp; Git-Flow <small class="uppercase border px-1 text-[.65rem] align-middle">great</small></li>
+			<li><abbr title="Regular Expressions">RegExp</abbr> <small class="uppercase border px-1 text-[.65rem] align-middle">not bad</small></li>
+			<li>Redis <small class="uppercase border px-1 text-[.65rem] align-middle">it's Easy</small></li>
+			<li>Unix <small class="uppercase border px-1 text-[.65rem] align-middle">banner good</small></li>
+		</ul>
+		<ul class="selectors mt-8 pl-10 space-y-2 text-sm">
+			<li class="text-blue">English <small class="uppercase border px-1 text-[.65rem] align-middle">fluent</small></li>
+			<li class="text-green">Farsi <small class="uppercase border px-1 text-[.65rem] align-middle">mother tongue</small></li>
+			<li class="text-red">Azeri<!--<small>father tongue</small>--></li>
+		</ul>
+		<p class="mt-6 text-sm text-gray italic">Other skills not mentioned...</p>
+	</section>
+
+	<section aria-labelledby="about" data-styles="about" class="mt-20">
+		<h2 id="about" class="font-helvetica font-bold text-2xl sm:text-3xl tracking-tight underline decoration-2 underline-offset-6">About</h2>
+		<!--It's a comment. Browsers ignore it. You shouldn't.-->
+		<div class="about-copy mt-6 text-[.95rem] italic">
+			<span aria-hidden="true" class="block text-silver not-italic">/*</span>
+			<p class="border-l-4 border-gold pl-6 my-2">
+				Studied software engineering and have a first class degree with honours in London. Started working
+				with computers since the release of early Unix and MS-DOS when there weren't not graphical user
+				interface operating systems. Started programming when 16 with PHP
+				and JavaScript, working with XHTML and early CSS to create static websites. While learning, decided
+				to make online tutorials which results to be an instructor in Udemy and Parsclick with many satisfied
+				students.
+			</p>
+			<p class="border-l-4 border-gold pl-6 my-4">
+				Mainly build web applications as a web developer. Built applications with PHP and MySQL, Ruby on
+				Rails, Laravel, Node, HTML5, CSS3, JavaScript and AJAX. Don't like CMSs but I have worked with WordPress and
+				Joomla. Apart from web, have Ruby, Git, Unix Bash and Regular Expression experience.
+				Also working as a freelancer so you're welcome to contact to hire.
+				<span class="hover:bg-yellow transition-colors">The crazy thing is I also do programming in my free time</span>.
+			</p>
+			<span aria-hidden="true" class="block text-silver not-italic">*/</span>
+		</div>
+	</section>
+
+	<section aria-labelledby="portfolio" data-styles="portfolio" class="mt-20">
+		<h2 id="portfolio" class="font-helvetica font-bold uppercase text-2xl sm:text-3xl tracking-tight">
+			<span class="inline-block border-2 border-dashed border-light-red text-[5.5rem] leading-none px-1 mr-0.5">P</span>ortfolio<span class="text-pink">oo</span> 🎵
+		</h2>
+		<p class="mt-4 text-sm text-gray">Eight projects. Eight <code>border-style</code> values. Nobody asked.</p>
+		<!-- Each row wears a different border-style. The title attribute explains why. -->
+		<ul class="work mt-8 space-y-4 text-sm">
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-double border-light-red px-2 py-1 hover:bg-light-red hover:text-white transition-colors"
+					href="https://sheytoonak.app" target="_blank" rel="noopener" title="border-style: double. It's a dating app.">sheytoonak.app</a>
+				<code class="text-silver">double;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-ridge border-purple px-2 py-1 hover:bg-purple hover:text-white transition-colors"
+					href="https://medialake.ai" target="_blank" rel="noopener" title="border-style: ridge. Every lake needs a ridge.">medialake.ai</a>
+				<code class="text-silver">ridge;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-inset border-pink px-2 py-1 hover:bg-pink transition-colors"
+					href="https://persianwoo.com" target="_blank" rel="noopener" title="border-style: inset. Sunken, but still here.">persianwoo.com</a>
+				<code class="text-silver">inset;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-solid border-orange px-2 py-1 hover:bg-orange transition-colors"
+					href="https://parsclick.net" target="_blank" rel="noopener" title="border-style: solid. Where it all started.">parsclick.net</a>
+				<code class="text-silver">solid;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-dashed border-red px-2 py-1 hover:bg-red hover:text-white transition-colors"
+					href="https://gymonlondon.com/" target="_blank" rel="noopener" title="border-style: dashed. It's a gym. You dash.">gymonlondon.com</a>
+				<code class="text-silver">dashed;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-groove border-blue px-2 py-1 hover:bg-blue hover:text-white transition-colors"
+					href="https://printworkslondon.co.uk/" target="_blank" rel="noopener" title="border-style: groove. It's a venue. Obviously.">printworkslondon.co.uk</a>
+				<code class="text-silver">groove;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<a class="uppercase tracking-widest border-4 border-dotted border-green px-2 py-1 hover:bg-green hover:text-white transition-colors"
+					href="https://github.com/laravel/spark-aurelius/commit/e2de618279197dced486e36ac66d8bbae06dbb59" target="_blank" rel="noopener" title="border-style: dotted. Signed on the dotted line: one merged commit.">Laravel Spark Contributor</a>
+				<code class="text-silver">dotted;</code>
+			</li>
+			<li class="flex flex-wrap items-baseline gap-x-3">
+				<span class="border-4 border-outset border-silver rounded-lg px-2 py-1" title="border-style: outset. There's always more coming out.">and more...</span>
+				<code class="text-silver">outset;</code>
+			</li>
+		</ul>
+	</section>
+
+	<section aria-labelledby="contact" data-styles="contact" class="mt-20">
+		<h2 id="contact" class="font-helvetica font-bold text-2xl sm:text-3xl tracking-tight underline decoration-2 underline-offset-6">Reach Out</h2>
+		<p class="mt-6">And touch base 🎶<br>I like meeting new people</p>
+		<a
+			class="inline-block mt-8 font-helvetica font-bold tracking-tight text-4xl sm:text-5xl bg-black text-white px-3 py-1 hover:bg-gold hover:text-black transition-colors"
+			id="email"
+			href="#"
+			data-name="info"
+			data-domain="azimi"
+			data-tld="dev"
+			onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
+		>EMAIL ME</a>
+	</section>
+</div>
+<!--The empty right side becomes a DevTools Styles pane. The rules are real: untick one and the page loses it.-->
+<aside aria-label="Live CSS and a console for this page" class="hidden xl:block">
+	<div class="sticky top-8 h-[calc(100vh-4rem)] flex flex-col gap-5 text-[.8rem] leading-[1.6]">
+	<div class="shrink-0 border-2 border-black bg-white">
+		<div class="flex items-center gap-4 border-b-2 border-black bg-gold px-3 py-1.5">
+			<span class="font-bold">Styles</span><span class="text-black/55">Computed</span><span class="text-black/55">Layout</span>
+			<span class="ml-auto text-black/55">:hov .cls +</span>
+		</div>
+		<p id="crumbs" class="px-3 py-1.5 border-b border-black/10 text-black/60 truncate">html body main section#what</p>
+		<div data-panel="what">
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.spellcheck</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-spellcheck"><span class="decl"><span class="prop">text-decoration</span>: <span class="val">underline wavy <i class="swatch" style="background:#ff4136"></i>#ff4136</span>;</span></label>
+				<div class="pl-6 text-gray">/* SEOer isn't a word. It ranks anyway. */</div>
+				<div>}</div>
+			</div>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.websites</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-websites"><span class="decl"><span class="prop">border-bottom</span>: <span class="val">2px solid <i class="swatch" style="background:#a463f2"></i>#a463f2</span>;</span></label>
+				<div>}</div>
+			</div>
+		</div>
+		<div data-panel="skills" hidden>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.selectors &gt; li::before</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-bullets"><span class="decl"><span class="prop">content</span>: <span class="val">var(--b)</span>;</span></label>
+				<div class="pl-6 text-gray">/* bullets, in order: * &gt; + ~ # . :: @ &amp; {} */</div>
+				<div>}</div>
+			</div>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.selectors &gt; li:hover::before</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-hover"><span class="decl"><span class="prop">content</span>: <span class="val">":hover"</span>;</span></label>
+				<div class="pl-6 text-gray">/* hover a skill. go on. */</div>
+				<div>}</div>
+			</div>
+		</div>
+		<div data-panel="about" hidden>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.about-copy</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-italic"><span class="decl"><span class="prop">font-style</span>: <span class="val">italic</span>;</span></label>
+				<div class="pl-6 text-gray">/* the whole section is a comment */</div>
+				<div>}</div>
+			</div>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.about-copy p</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-gold"><span class="decl"><span class="prop">border-left</span>: <span class="val">4px solid <i class="swatch" style="background:#ffb700"></i>#ffb700</span>;</span></label>
+				<div>}</div>
+			</div>
+		</div>
+		<div data-panel="portfolio" hidden>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">.work a</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-borders"><span class="decl"><span class="prop">border-style</span>: <span class="val">var(--one-each-please)</span>;</span></label>
+				<div class="pl-6 text-gray">/* 8 projects, 8 border-styles */</div>
+				<div>}</div>
+			</div>
+		</div>
+		<div data-panel="contact" hidden>
+			<div class="px-3 py-2.5 border-b border-black/10">
+				<div><span class="text-black">footer .who</span> {</div>
+				<label class="rule"><input type="checkbox" checked data-off="off-secret"><span class="decl"><span class="prop">color</span>: <span class="val"><i class="swatch" style="background:#000"></i>#000</span>;</span></label>
+				<label class="rule"><input type="checkbox" checked data-off="off-secret-bg"><span class="decl"><span class="prop">background</span>: <span class="val"><i class="swatch" style="background:#000"></i>#000</span>;</span></label>
+				<div class="pl-6 text-gray">/* spoiler. untick both. */</div>
+				<div>}</div>
+			</div>
+		</div>
+		<p class="px-3 py-2.5 text-gray">/* untick a box. it's the real CSS. */</p>
+	</div>
+	<!--The drawer under Styles: the page's JS narrates itself here, and visitors can type a few commands. No eval: it's a lookup table.-->
+	<div class="flex-1 min-h-40 flex flex-col border-2 border-black bg-white">
+		<div class="flex items-center gap-4 border-b-2 border-black bg-gold px-3 py-1.5">
+			<span class="font-bold">Console</span><span class="text-black/55">top ▾</span>
+			<span class="ml-auto text-black/55">Default levels ▾</span>
+		</div>
+		<ol id="log" role="log" aria-live="polite" class="flex-1 min-h-0 overflow-y-auto"></ol>
+		<form id="prompt" class="flex items-baseline gap-2 border-t border-black/15 px-3 py-1.5 focus-within:bg-gold/15">
+			<span aria-hidden="true" class="font-bold text-blue">›</span>
+			<input id="cmd" aria-label="Console. Type help() and press Enter" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="help()" class="flex-1 min-w-0 bg-transparent outline-none placeholder:text-black/35">
+		</form>
+	</div>
+	</div>
+</aside>
+</main>
+
+<footer class="bg-purple text-white/85 pl-(--axis) pr-5 py-16 flex flex-wrap items-end justify-between gap-8">
+	<div>
+		<p class="font-helvetica font-bold uppercase text-2xl sm:text-3xl tracking-tight text-white">Thanks for stopping by</p>
+		<p class="mt-3 text-sm">
+			Code, design and copy by:
+			<span class="who bg-black text-black hover:text-white hover:bg-transparent transition-colors">who do you think?</span>
+			&copy; <time id="current-year">2026</time> Eric Azimi.
+		</p>
+	</div>
+	<a href="#top" aria-label="Back to top" class="block w-12 sm:w-16 text-black hover:text-white transition-colors">
+		<svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 877.71 877.71">
+			<g transform="translate(19.99999,28.57142)"><path d="M-20,670.7c0-1.9,350-700,350.6-699.3c1.9,2.4,350.1,699.5,349.4,699.7c-0.4,0.2-79.3-33.7-175.3-75.2 l-174.5-75.6l-174.2,75.5c-95.8,41.5-174.6,75.5-175.1,75.5S-20,671.1-20,670.7z"/></g>
+		</svg>
+	</a>
+</footer>
+
+<script>
+	document.getElementById('current-year').textContent = new Date().getFullYear();
+
+	const box = document.getElementById('box');
+	const toggle = document.getElementById('box-toggle');
+	const caption = document.getElementById('box-caption');
+	toggle.addEventListener('click', () => {
+		const boxed = box.toggleAttribute('data-boxed');
+		toggle.setAttribute('aria-pressed', boxed);
+		toggle.textContent = boxed ? 'Let him out' : 'Put him back in the box';
+		caption.textContent = boxed ? '/* overflow: hidden; happy now? */' : '/* thinks outside the box */';
+		window.devtools?.print('in', 'box.toggleAttribute("data-boxed")');
+		window.devtools?.print('ret', String(boxed));
+	});
+</script>
+<script src="/scripts/devtools.js" defer></script>
+</body>
+</html>
